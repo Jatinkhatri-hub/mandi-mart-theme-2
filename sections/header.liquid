@@ -429,8 +429,9 @@
     const megaMenuItem = document.querySelector('.mega-menu__sub');
 
     dropdown.addEventListener('click', function(event) {
-      
-    })
+      event.stopPropagation();
+      megaMenuItem.classList.
+    });
   })
 
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
