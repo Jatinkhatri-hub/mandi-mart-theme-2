@@ -439,10 +439,10 @@
     });
 
     document.querySelectorAll('.mega-menu__sub').forEach(function(menu) {
-    menu.addEventListener('click', function(event) {
-      event.stopPropagation();
+      menu.addEventListener('click', function(event) {
+       event.stopPropagation();
+      });
     });
-   });
   })
 
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
