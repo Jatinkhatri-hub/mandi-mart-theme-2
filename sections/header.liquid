@@ -447,6 +447,15 @@
     });
   })
 
+  document.addEventListener('click', function(event) {
+    dropdownLinks.forEach(function(dropdown) {
+      const megaMenuItem = dropdown.querySelector('.mega-menu__sub');
+      if (!dropdown.contains(event.target)) {
+        megaMenuItem.classList.remove('nav-visible');
+      }
+    });
+  });
+
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
     menuDrawerBtn.addEventListener('click', function() {
       megaMenuNav.classList.toggle('nav-disable');
