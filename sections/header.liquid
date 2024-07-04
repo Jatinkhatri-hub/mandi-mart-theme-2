@@ -74,7 +74,7 @@
             </a>
 
             {% if link.links != blank %}
-              <ul class="mega-menu__sub .desktop">
+              <ul class="mega-menu__sub desktop hidden">
                 {% for child in link.links %}
                   <li class="mega-menu__sub-item">
                     <a href="{{ child.url }}">{{ child.title }}</a>
@@ -404,7 +404,7 @@
 
   dropDown.addEventListener('click', function () {
     console.log('dropdown clicked')
-    megaMenuItem.classList.toggle('hi')
+    megaMenuItem.classList.toggle('hidden');
   });
 
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
