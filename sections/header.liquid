@@ -61,7 +61,7 @@
         </div>
         {% for link in section.settings.mega_navbar.links %}
           <li class="mega__nav-link">
-            <a href="{{ link.url }}"><img src="{{ child.featured_image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
+            <a href="{{ link.url }}"><img src="{{ link.image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
             {% if link.links != blank %}
               {% render 'icon-arrow-down' %}
             {% endif %}
