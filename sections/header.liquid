@@ -415,7 +415,7 @@
   const headerOverlay = document.querySelector('.header-class__overlay');
   const mobileSearchIcon = document.querySelector('.mobile-search-icon');
   const dropdownLinks = document.querySelectorAll('.dropdown');
-  const megaMenuItem = document.querySelector('.mega-menu__sub');
+  
 
 
   // dropDown.addEventListener('click', function(event) {
@@ -425,7 +425,9 @@
   //   megaMenuItem.classList.toggle('.mega-menu__sub-active');
   // });
 
-  dropdownLinks.forEach(function(dropdown))
+  dropdownLinks.forEach(function(dropdown) {
+    const megaMenuItem = document.querySelector('.mega-menu__sub');
+  })
 
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
     menuDrawerBtn.addEventListener('click', function() {
