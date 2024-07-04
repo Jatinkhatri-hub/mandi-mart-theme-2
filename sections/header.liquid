@@ -63,7 +63,7 @@
           {%  assign collection_handle = link.url |  remove: '/collections/' %}
           {% assign collection = collections[collection_handle] %} 
           <li class="mega__nav-link">
-            <a href="{{ link.url }}"><img src="{{ link.image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
+            <a href="{{ link.url }}"><img src="{{ collection.image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
             {% if link.links != blank %}
               {% render 'icon-arrow-down' %}
             {% endif %}
