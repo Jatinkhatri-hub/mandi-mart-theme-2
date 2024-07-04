@@ -344,7 +344,7 @@
     .mega-menu__sub {
       position: relative;
       margin-top: 0;
-      
+
     }
 
     .header-class__overlay {
@@ -411,8 +411,9 @@
   const megaMenuItem = document.querySelector('.mega-menu__sub');
 
 
-  dropDown.addEventListener('click', function () {
+  dropDown.addEventListener('click', function (event) {
     console.log('dropdown clicked')
+    
     megaMenuItem.classList.toggle('nav-hidden');
   });
 
