@@ -82,7 +82,7 @@
                       <ul>
                         {% for childTwo  in child.links %}
                           <li>
-                            <a href="{{ childTwo.url }}"></a>
+                            <a href="{{ childTwo.url }}">{{ childTwo.title }}</a>
                           </li>
                         {% endfor %}
                       </ul>
