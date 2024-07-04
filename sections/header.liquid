@@ -70,7 +70,7 @@
               <ul class="mega-menu__sub .desktop">
                 {% for child in link.links %}
                   <li class="mega-menu__sub-item">
-                    <a href="{{ child.url }}"><img src="{{ 'child.feature_image' |   img_url: 'medium'}}">{{ child.title }}</a>
+                    <a href="{{ child.url }}"><img src="{{ 'child.featured_image' |   img_url: 'medium'}}">{{ child.title }}</a>
                   </li>
                 {% endfor %}
               </ul>
