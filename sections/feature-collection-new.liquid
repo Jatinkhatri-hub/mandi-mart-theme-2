@@ -1,0 +1,362 @@
+
+{{ 'product-card-new.css' | asset_url | stylesheet_tag }}
+{{ 'add-to-cart.js'|  asset_url |  script_tag }}
+
+{% comment %} 
+{{ 'swiper.min.js' | asset_url | script_tag }} {% endcomment %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.section_color_scheme }}">
+<div class="container__feature-collection page-width color-{{ section.settings.color_scheme }}" style="padding-inline: 2rem;" >
+  <div class="btn-group-feature-collection">
+      <div class="swiper-btn button--{{ section.id }} swiper-button-prev"></div>
+      <div class="swiper-btn button--{{ section.id }} swiper-button-next "></div>
+    </div>
+  <div class="container__feature-collection--title-wrapper">
+    <h2 class="container__feature-collection--title">{{ section.settings.heading }}</h2>
+  </div>
+  <div class="feature-collection mySwiper swiper mySwiper-{{ section.id }} ">
+    <div class="container__product-list swiper-wrapper">
+      {% for product in section.settings.collection.products %}
+        {%  assign index8 = forloop.index0 |  modulo: 8 %}
+        {%  assign noOfProducts =  section.settings.collection.products | size %}
+        
+        {% if index8 == 0 %}
+          <div class="swiper-slide">
+            <div class="product-grid {% if index8 < 6 and index8 > 4 %} product-grid-6 {% elsif index8 < 4 and index8 > 2 %} product-grid-4 {% elsif index8 > 0 and index8 < 3 %} product-grid-2 {% endif %}"> 
+        {% endif %}
+
+        
+        
+        {% render 'product-card-new' product: product
+        %}
+        
+
+        
+
+        {% if index8 == 7 or forloop.last %}
+            </div>
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination swiper-pagination-{{ section.id }}"></div>
+  </div>
+</div>
+</div>
+
+<style>
+
+.container__feature-collection {
+  position: relative
+}
+
+.btn-group-feature-collection {
+    display: flex;
+    position: absolute;
+    gap: 20px;
+    right: 20px;
+    top: 20px;
+    
+  }
+
+  .swiper-btn {
+    display: flex !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #008780;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: initial;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 50px;
+
+  }
+  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 0px !important;
+}
+  
+  /* .swiper-pagination {
+    top: 45px;
+  } */
+
+  /* .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  } */
+
+  .swiper-pagination-bullet-active {
+    background-color: #008780;
+  }
+
+  .swiper-button-disabled {
+    background-color: transparent;
+    border: 2px solid #008780;
+    color: black;
+  }
+
+  @media screen and (max-width: 769px) {
+    .btn-group-feature-collection {
+      bottom: 2rem;
+      top: auto;
+    }
+      
+    .swiper-btn {
+      width: 35px;
+      height: 35px;
+      
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .swiper-pagination {
+    text-align: start;
+  }
+  }
+
+</style>
+
+
+<script>
+//   document.addEventListener('DOMContentLoaded', function() {
+
+//       let swipers = {};
+//       const updateSwiper = () => {
+
+//       const id = ""
+//       console.log(id);
+//       const swiperClass = document.querySelector(`#shopify-section-${id} feature-collection.swiper`).classList[3];
+//       console.log(swiperClass);
+
+//       swipers?.[swiperClass]?.destroy(true, true)
+
+//       swipers[swiperClass] = new Swiper( '.' + swiperClass, {
+//         slidesPerView: 1,
+//         spaceBetween: 10,
+//         navigation: {
+//           nextEl: '.swiper-button-next.' + swiperClass.replace(' ', '.').replace('mySwiper-', 'button--'),
+//           prevEl: '.swiper-button-prev.' + swiperClass.replace(' ', '.').replace('mySwiper-', 'button--'),
+//         },
+//         pagination: {
+//           el: `.${swiperClass.replace(' ', '.')}.swiper-pagination`,
+//           clickable: true,
+//         },
+//       });
+//     };
+//     updateSwiper()
+//     window.addEventListener('resize', () => updateSwiper())
+//     document.addEventListener("shopify:section:load", () => updateSwiper());
+
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const id = "{{ section.id }}";
+  
+  const swiperClass = `.mySwiper-${id}`;
+  const swiperPaginationClass = `.swiper-pagination-${id}`;
+  const swiperButtonNextClass = `.button--${id}.swiper-button-next`;
+  const swiperButtonPrevClass = `.button--${id}.swiper-button-prev`;
+
+  const swiperContainer = document.querySelector(swiperClass);
+  const swiperPagination = document.querySelector(swiperPaginationClass);
+  const swiperButtonNext = document.querySelector(swiperButtonNextClass);
+  const swiperButtonPrev = document.querySelector(swiperButtonPrevClass);
+
+  if (swiperContainer && swiperPagination && swiperButtonNext && swiperButtonPrev) {
+    let swiper = new Swiper(swiperClass, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: swiperButtonNextClass,
+        prevEl: swiperButtonPrevClass,
+      },
+      pagination: {
+        el: swiperPaginationClass,
+        clickable: true,
+      },
+      breakpoints: {
+        786: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        }
+      },
+      observer: true, 
+      observeParents: true,
+    });
+
+    swiper.init();
+    swiper.update();
+  } else {
+    console.error('Swiper initialization elements not found for section:', id);
+  }
+});
+
+
+</script>
+
+
+{% comment %} 
+
+  // let swiper = new Swiper(".mySwiper", {
+  //   slidesPerView: 4,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true
+  //   },
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+
+// pagination: {
+// el: ".swiper-pagination",
+// clickable: true;
+// },
+//  });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var swiper = new Swiper('.mySwiper', {
+//     slidesPerView: 4,
+//     spaceBetween: 30,
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//   });
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   //    document.addEventListener('shopify:section:load', () => {
+//     const id = ""
+    
+
+//     let swiper = new Swiper(`.mySwiper-${id}`, {
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//     // grid: {
+//     //       rows: 2,
+//     // },
+//     pagination: {
+//       el: `.swiper-pagination-${id}`,
+//       clickable: true,
+//     },
+//     navigation: {
+//       prevEl: `.swiper-button-prev-${id}`,
+//       nextEl: `.swiper-button-next-${id}`,
+//     },
+//     breakpoints: {
+//       786: {
+//         slidesPerView: 1,
+//         spaceBetween: 10,
+        
+//       }
+//     },
+//     observer: true, 
+//     observeParents: true,
+//   })
+//   setTimeout(() => {
+//     console.log(`swiper.init()`);
+//   swiper.init();
+
+//   console.log(`swiper.update()`);
+//   swiper.update();
+//   }, 5000);
+   
+//     });
+ {% endcomment %}
+
+
+
+{% schema %}
+  {
+    "name": "New Featured Collection",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "<p>Collection</p>"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.multirow.settings.container_color_scheme.label",
+        "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "New Featured Collection",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

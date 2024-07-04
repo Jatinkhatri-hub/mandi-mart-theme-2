@@ -1,0 +1,262 @@
+<style>
+    .custom-shape-divider-top-1719067451 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .custom-shape-divider-top-1719067451 svg {
+      position: relative;
+      display: block;
+      width: calc(134% + 1.3px);
+      height: 152px;
+    }
+
+    .custom-shape-divider-top-1719067451 .shape-fill {
+      fill: #FFFFFF;
+    }
+
+
+</style>
+
+
+<footer class="footer footer-padding-top color-{{ section.settings.color_scheme }}" style="position: relative" >
+  <div class="custom-shape-divider-top-1719067451 wave">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
+
+  <div class="container__footer">
+    {%  assign grid_area_no = 0 %} 
+    {% for block in section.blocks %}
+      {% if block.type == "link_list" %}
+        {% assign grid_area_no = grid_area_no | plus: 1%} 
+        <div class="footer-column" style="grid-area: menu-{{ grid_area_no }};"> 
+          <h2>{{ block.settings.heading }}</h2>
+          {% for link in block.settings.menu.links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </div>
+      {% elsif block.type == 'container' %}
+        <div class="container__disclaimer-info" style="background: {{ block.settings.container_color }};">
+          <h2 class="disclaimer-heading" style="color: {{ block.settings.font_color }};">{{ block.settings.disclaimer_heading }}</h2>
+          <p class="disclaimer-info" color: {{ block.settings.font_color }};>{{ block.settings.details }}</p>
+        </div>
+      {% elsif block.type == 'brand-info'%}
+        <div class="container__brand-details">
+          <div class="container__brand-logo">
+            <img src="{{ block.settings.brand_logo |  img_url: 'medium' }}" >
+          </div>
+          <div class="container__brand-info">
+            <p>{{ block.settings.copyright }}</p>
+          </div>
+          <div class="container__payment-type">
+            <ul class="payment-type__list">
+              {% for type in shop.enabled_payment_types %} 
+                <li class="payment-type__icon">
+                  {{ type |  payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</footer>
+
+<style>
+
+  .container__footer {
+    display: grid;
+    flex-direction: row;
+    gap: 40px;
+    padding: 4rem;
+    justify-content: space-between;
+    grid-template-areas: 'brand menu-1 menu-2 menu-3 disclaimer';
+  }
+
+  .footer-padding-top {
+    padding-top: 8rem;
+  }
+
+  .wave {
+    display: block;
+  }
+/* 
+  .footer-column {
+    grid-area: menu;
+  } */
+  .footer-column li {
+    list-style: none;
+  }
+
+  .footer-column li a {
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+  }
+
+  .container__disclaimer-info {
+    width: 285px;
+    text-align: center;
+    border-radius: 8px;
+    padding-inline: 1rem;
+    grid-area: disclaimer;
+  }
+
+  .disclaimer-heading {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .container__brand-details {
+    width: 370px;
+    grid-area: brand;
+  }
+
+  .payment-type__list {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: start;
+    padding: 0;
+  }
+  .payment-type__icon {
+    list-style: none;
+  }
+
+  @media screen and (max-width: 869px) {
+    .container__footer {
+      flex-direction: column;
+      align-items: center;
+      grid-template-areas: 
+      'brand brand brand'
+      'menu-1 menu-2 menu-3  '
+      'disclaimer disclaimer disclaimer';
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .footer-column {
+      align-self: flex-start;
+    }
+    .container__brand-details {
+      text-align: center;
+      justify-self: center;
+    }
+
+    .container__disclaimer-info {
+      justify-self: center;
+    }
+
+    .footer-padding-top {
+      padding-block: 1rem;
+    }
+    .wave {
+      display: none;
+    }
+
+    .payment-type__list {
+      justify-content: space-around;
+      padding-inline: 1rem;
+    }
+
+    .footer-column h2 {
+      font-size: 24px;
+    }
+
+    .footer-column li {
+      font-size: 16px;
+    }
+
+    .container__brand-details p {
+      font-size: 16px;
+    }
+
+    .container__disclaimer-info p {
+      font-size: 16px;
+    }
+
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "link_list",
+        "name": "Footer Menu",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "heading",
+            "default": "Quick links",
+            "label": "Menu Heading"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "menu"
+          }
+        ]
+      }, {
+        "type": "container",
+        "name": "Disclaimer",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "disclaimer_heading",
+            "default": "Heading",
+            "label": "Heading"
+          }, {
+            "type": "textarea",
+            "id": "details",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "label": "Paragraph"
+          }, {
+            "type": "color",
+            "id": "container_color",
+            "label": "Background Color"
+          }, {
+            "type": "color",
+            "id": "font_color",
+            "label": "Font Color"
+          }
+          
+        ]
+      }, {
+        "type": "brand-info",
+        "name": "Brand Info",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "brand_logo",
+            "label": "Brand Logo"
+          }, {
+            "type": "textarea",
+            "id": "copyright",
+            "default": "Copyright © 2024, Mandi Mart.",
+            "label": "Copyrights"
+          }
+        ]
+      }
+
+    ]
+  }
+{% endschema %}

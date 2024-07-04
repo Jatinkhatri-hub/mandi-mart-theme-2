@@ -1,0 +1,38 @@
+.container__feature-collection {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 1300px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.container__feature-collection--title {
+  font-size: 2.375rem;
+  font-weight: 600;
+  color: #074542;
+}
+
+.container__product-list {
+  gap: 2rem;
+  /* display: flex; */
+  display: grid !important;
+  grid-template-columns: repeat(4, 300px) !important;
+  grid-template-rows: repeat(2 , 1fr) !important;
+  gap: 1rem;
+  justify-content: start;
+  width: 1440px;
+}
+
+/* .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2) !important;
+
+  /* Center slide text vertically */
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+} */

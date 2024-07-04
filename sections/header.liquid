@@ -1,0 +1,441 @@
+<header class="container__nav-bar ">
+  <div class="main__nav-bar color-{{ section.settings.color_scheme }}">
+    <a class="menu-drawer-btn">{% render 'icon-hamburger' %}</a>
+    <a href="/" class="header__logo">
+      <img src="{{ section.settings.brand_logo |  img_url: 'medium' }}" alt="{{ site.name }}">
+    </a>
+
+    <div class="search-bar desktop">
+      <form action="{{ routes.search_url }}">
+        <input
+          class="search-box"
+          type="text"
+          name="q"
+          value="{{ search.terms |  escape }}"
+          placeholder="Explore 1000+ supplements">
+        <button
+          class="search-btn"
+          value="Search"
+          type="submit">{% render 'icon-search' %}</button>
+      </form>
+    </div>
+
+    <ul class="header-nav">
+      {% for link in section.settings.navigation.links %}
+        <li class="nav-link">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="container__mobile-icon">
+      <a class="mobile-search-icon">{% render 'icon-search' %}</a>
+
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="icon-account">
+          {% render 'icon-account' %}
+        </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="icon-cart">
+        {% render 'icon-new-cart' %}
+      </a>
+    </div>
+  </div>
+  {% if section.settings.mega_navbar != blank %}
+    <div class="mega-menu__nav-bar color-{{ section.settings.menu_color_scheme }}">
+
+      <ul class="mega-menu__nav nav-disable">
+        <div class="search-bar mobile">
+          <form action="{{ routes.search_url }}">
+            <input
+              class="search-box"
+              type="text"
+              name="q"
+              value="{{ search.terms |  escape }}"
+              placeholder="Explore 1000+ supplements">
+            <button
+              class="search-btn"
+              value="Search"
+              type="submit">{% render 'icon-search' %}</button>
+          </form>
+        </div>
+        {% for link in section.settings.mega_navbar.links %}
+          <li class="mega__nav-link">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links != blank %}
+              {% render 'icon-arrow-down' %}
+            {% endif %}
+
+            {% if link.links != blank %}
+              <ul class="mega-menu__sub .desktop">
+                {% for child in link.links %}
+                  <li class="mega-menu__sub-item">
+                    <a href="{{ child.url }}">{{ child.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <div class="header-class__overlay"></div>
+</header>
+
+
+
+<style>
+  .main__nav-bar {
+    /* height: 85px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 4rem;
+    padding-block: 1rem;
+  }
+  .menu-drawer-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .menu-drawer-btn svg path {
+    fill: rgb(var(--color-foreground));
+  }
+
+  .header__logo {
+    display: block;
+  }
+
+  .menu-drawer-btn {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px
+  }
+
+  .search-bar form {
+    display: flex;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+
+  .search-box {
+    height: 45px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    padding-left: 1rem;
+    width: 350px;
+  }
+
+  .search-box:focus {
+    border: none;
+    outline: none;
+    appearance: none;
+  }
+
+
+  .search-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #cfe8e7;
+    border: 1px solid #cfe8e7;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-btn:hover {
+    cursor: pointer;
+  }
+
+  .container__mobile-icon {
+    display: none;
+  }
+
+  .nav-link a {
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+  }
+
+  .nav-link {
+    list-style: none;
+  }
+
+  .mega-menu__nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mega-menu__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    padding-inline: 2rem;
+    gap: 4rem;
+    align-items: center;
+  }
+
+
+  .mega__nav-link a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mega__nav-link {
+    list-style: none;
+    position: relative;
+  }
+
+  .mega__nav-link svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .mega__nav-link svg path {
+    color: rgb(var(--color-foreground));
+  }
+
+  .mega-menu__sub {
+    position: absolute;
+    top: 0;
+    margin-top: 8rem;
+    /* transform: translate(-50%); */
+    background-color: rgb(var(--color-background));
+    width: 800px;
+    left: -9999px;
+    opacity: 0;
+    transition: left 0s 0.4s
+    , opacity 0.4s;
+  }
+
+  .mega__nav-link:hover .mega-menu__sub {
+    left: 50%;
+    opacity: 1;
+    transition: left 0s
+    , opacity 0.4s;
+  }
+
+
+  .mega-menu__sub-item {
+    list-style: none;
+  }
+
+  .mobile-search-icon svg g path {
+    fill: rgb(var(--color-foreground));
+  }
+
+  .icon-cart svg {
+    width: 20px;
+    height: 20px;
+  }
+  .icon-account svg {
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .icon-account svg path,
+  .icon-cart svg path {
+    fill: rgb(var(--color-foreground))
+  }
+
+
+  @media screen and (max-width: 896px) {
+
+    .search-box {
+      width: 250px;
+    }
+
+    .main__nav-bar {
+      justify-content: space-between;
+    }
+
+    .header-nav {
+      display: none;
+    }
+
+    .container__mobile-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+    }
+    .header__logo {
+    display: block;
+    transform: translateX(-5rem);
+}
+    .mega-menu__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: auto;
+      width: 90%;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 2rem;
+      background-color: rgb(var(--color-background));
+      z-index: 10;
+      /* transform: translateX(-100%); */
+      transition: 0.4s transform;
+      gap: 2rem;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+
+    .mega__nav-link {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
+      text-align: center;
+      padding-bottom: 0.5rem;
+    }
+    .header-class__overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9;
+    }
+
+    .overlay-add {
+      display: block !important;
+    }
+
+    .nav-disable {
+      transform: translateX(-100%);
+    }
+
+    .menu-drawer-btn {
+      display: block;
+    }
+    .mobile {
+      display: inline;
+      padding-top: 5rem;
+    }
+
+  }
+
+</style>
+
+<script>
+  // document.querySelector('.menu-drawer-btn').addEventListener('click', function() {
+  //   document.querySelector('.mega-menu__nav').classList.toggle('nav-disable');
+  //   console.log('text1')
+  //   document.querySelector('.header-class__overlay').classList.toggle('overlay-add');
+  //   console.log('clicked');
+  // });
+
+  // document.querySelector('.header-class__overlay').addEventListener('click', function() {
+  //   console.log('test2')
+  //   document.querySelector('.mega-menu__nav').classList.toggle('nav-disable');
+  //   console.log('clicked');
+  //   document.querySelector('.header-class__overlay').classList.toggle('overlay-add');
+  // });
+
+  // document.querySelector('.mobile-search-icon').addEventListener('click', function() {
+  //   document.querySelector('.mega-menu__nav').classList.toggle('nav-disable');
+  //   document.querySelector('.header-class__overlay').classList.toggle('overlay-add');
+  //   console.log('clicked');
+  // });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuDrawerBtn = document.querySelector('.menu-drawer-btn');
+  const megaMenuNav = document.querySelector('.mega-menu__nav');
+  const headerOverlay = document.querySelector('.header-class__overlay');
+  const mobileSearchIcon = document.querySelector('.mobile-search-icon');
+
+  if (menuDrawerBtn && megaMenuNav && headerOverlay) {
+    menuDrawerBtn.addEventListener('click', function() {
+      megaMenuNav.classList.toggle('nav-disable');
+      console.log('text1');
+      headerOverlay.classList.toggle('overlay-add');
+      console.log('clicked');
+    });
+
+    headerOverlay.addEventListener('click', function() {
+      console.log('test2');
+      megaMenuNav.classList.toggle('nav-disable');
+      console.log('clicked');
+      headerOverlay.classList.toggle('overlay-add');
+    });
+
+    if (mobileSearchIcon) {
+      mobileSearchIcon.addEventListener('click', function() {
+        megaMenuNav.classList.toggle('nav-disable');
+        headerOverlay.classList.toggle('overlay-add');
+        console.log('clicked');
+      });
+    } else {
+      console.error('Mobile search icon not found');
+    }
+  } else {
+    console.error('Menu drawer button, mega menu nav, or header overlay not found');
+  }
+});
+
+
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Header",
+    "class": "section-header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Header Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo Width",
+        "default": 100,
+        "min": 20,
+        "max": 300,
+        "step": 5
+      },
+      {
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mega_navbar",
+        "label": "Mega Menu"
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      }, {
+        "type": "color_scheme",
+        "id": "menu_color_scheme",
+        "label": "t:sections.header.settings.menu_color_scheme.label",
+        "default": "scheme-1"
+      }
+    ]
+  }
+{% endschema %}

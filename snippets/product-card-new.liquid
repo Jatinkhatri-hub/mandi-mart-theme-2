@@ -1,0 +1,53 @@
+<div class="container__product-card">
+  <div class="product-card__badges-container">
+    {% assign original_price = product.compare_at_price %}
+    {% assign current_price = product.price %}
+
+    {% if original_price > current_price %}
+      {% assign savings = original_price | minus: current_price %}
+      {% assign savings_percentage = savings | times: 100 | divided_by: original_price | abs %}
+      {% assign savings_percentage_rounded = savings_percentage | round %}
+
+      <div class="product-card__badge-container" style="background-color: #FF6B00; color: white;">
+        <span>SALE</span>
+        {{ savings_percentage_rounded }}%
+      </div>
+    {% endif %}
+
+    {% if product.metafields.custom.product_card_badge_text %}
+      <div class="product-card__badge-container" style="background-color: {{ product.metafields.custom.product_card_badge_color.value |  color_to_hex }}; color: white; ">
+        {{ product.metafields.custom.product_card_badge_text }}
+      </div>
+    {% endif %}
+  </div>
+  <a class="product-card__url" href="{{product.url}}">
+    <div class="container__product-image">
+      <img src="{{ product.featured_image |  img_url: 'medium' }}" class="product-image" />
+    </div>
+  </a>
+  <div class="container__product-info">
+    <a class="product-card__url" href="{{product.url}}">
+    <div class="container__product-review">
+      <span>Meraki Medicinal</span>
+      <div class="container__review-stars">
+        <img src="{{ 'star.png' |  asset_url }}" />
+        <img src="{{ 'star.png' |  asset_url }}" />
+        <img src="{{ 'star.png' |  asset_url }}" />
+        <img src="{{ 'star.png' |  asset_url }}" />
+        <img src="{{ 'star.png' |  asset_url }}" />
+      </div>
+    </div>
+    <div class="container__product-title">
+      <span>{{ product.title }}</span>
+    </div>
+    </a>
+    <div class="container__price-and-button">
+      <div class="container__product-price">
+        <span>{{ product.price | money }}</span>
+      </div>
+      <div>
+        <button class="atc-button" data-variant-id="{{ product.variants.first.id }}">+ add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

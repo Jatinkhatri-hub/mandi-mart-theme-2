@@ -1,0 +1,16 @@
+<div class="collection__card--wrapper">
+  <a href="{{ url }}">
+    <div class="collection__card--img-wrapper">
+      {% comment %} {{ image | image_url: width: 275 | image_tag: sizes: sizes, widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200', class: "collection__card-img" }}
+         {% endcomment %}
+
+         <img src="{{ image |  img_url: 'medium' }}"  class="collection__card-img"> 
+      
+    </div>
+  </a>
+  <h2>
+    <a class="collection__card--title" href="{{ url }}">
+      {{ title }}
+    </a>
+  </h2>
+</div>
