@@ -61,7 +61,7 @@
         </div>
         {% for link in section.settings.mega_navbar.links %}
           <li class="mega__nav-link">
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <a href="{{ link.url }}"><img src="{{ child.featured_image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
             {% if link.links != blank %}
               {% render 'icon-arrow-down' %}
             {% endif %}
@@ -70,7 +70,7 @@
               <ul class="mega-menu__sub .desktop">
                 {% for child in link.links %}
                   <li class="mega-menu__sub-item">
-                    <a href="{{ child.url }}"><img src="{{ child.featured_image |   img_url: 'medium'}}" class="collection__featured-image">{{ child.title }}</a>
+                    <a href="{{ child.url }}">{{ child.title }}</a>
                   </li>
                 {% endfor %}
               </ul>
