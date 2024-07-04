@@ -413,7 +413,7 @@
 
   dropDown.addEventListener('click', function (event) {
     console.log('dropdown clicked')
-    
+    event.stopPropagation();
     megaMenuItem.classList.toggle('nav-hidden');
   });
 
