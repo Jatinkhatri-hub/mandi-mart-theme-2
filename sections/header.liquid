@@ -61,7 +61,7 @@
         </div>
         {% for link in section.settings.mega_navbar.links %}
           {%  assign collection_handle = link.url |  remove: '/collections/' %}
-          {} 
+          {% assign collection  =  %} 
           <li class="mega__nav-link">
             <a href="{{ link.url }}"><img src="{{ link.image |   img_url: 'medium'}}" class="collection__featured-image">{{ link.title }}</a>
             {% if link.links != blank %}
