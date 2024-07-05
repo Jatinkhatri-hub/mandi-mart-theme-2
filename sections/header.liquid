@@ -535,7 +535,8 @@
         const collectionHandle = item.getAttribute('data-collection-handle');
         const productPreview = item.querySelector('.product-preview');
 
-        //check 
+        //check if product are already featched
+        if (productPreview.innerHTML)
       });
     });
 
