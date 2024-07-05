@@ -86,22 +86,22 @@
                       {% endif %}
                       {{ child.title }}
                     </a>
+                    <div class="product-preview"></div>
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
                         {% for childTwo in child.links %}
                           <li class="mega-menu__sub-child-item">
                             <a href="{{ childTwo.url }}">{{ childTwo.title }}</a>
-                            </li>
-                          {% endfor %}
-                          </ul>
-                        {% endif %}
-                        </li>
-                      {% endfor %}
+                          </li>
+                        {% endfor %}
                       </ul>
-                      </div>
                     {% endif %}
-                    </li>
-                    <div class="product-preview"></div>
+                  </li>
+                {% endfor %}
+              </ul>
+              </div>
+            {% endif %}
+          </li>
         {% endfor %}
       </ul>
     </div>
@@ -528,13 +528,13 @@
     const mobileSearchIcon = document.querySelector('.mobile-search-icon');
     const dropdownLinks = document.querySelectorAll('.dropdown');
     const subChildDropdown = document.querySelectorAll('.sub-child-dropdown');
-    const dropdownItems = document.querySelectorAll('.mega-menu__sub-item');
+    const dropdownItems = document.querySelectorAll('.mega-menu__sub-item.sub-child-dropdown');
 
     dropdownItems.forEach(function(item) {
       item.addEventListener('mouseenter', function() {
         const collectionHandle = item.getAttribute('data-collection-handle');
         const productPreview = item.querySelector('.product-preview');
-        console.log('active');
+        console.log('active')
 
         //check if product are already featched
         if (productPreview.innerHTML.trim() === '') {
