@@ -536,7 +536,9 @@
         const productPreview = item.querySelector('.product-preview');
 
         //check if product are already featched
-        if (productPreview.innerHTML.trim() === '')
+        if (productPreview.innerHTML.trim() === '') {
+          fetchProducts
+        }
       });
     });
 
