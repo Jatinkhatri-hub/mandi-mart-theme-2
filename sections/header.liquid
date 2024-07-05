@@ -544,7 +544,8 @@
 
     function fetchProducts(collectionHandle, container) {
       fetch(`/collections/${collectionHandle}/products.json`)
-      .then(response =)
+      .then(response => response.json())
+      .then()
     }
 
 
