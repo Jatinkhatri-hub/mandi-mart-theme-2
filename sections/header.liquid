@@ -86,17 +86,17 @@
                       {% endif %}
                       {{ child.title }}
                     </a>
-                    <div class="product-preview"></div>
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
                         {% for childTwo in child.links %}
                           <li class="mega-menu__sub-child-item">
                             <a href="{{ childTwo.url }}">{{ childTwo.title }}</a>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </li>
+                            </li>
+                          {% endfor %}
+                          </ul>
+                        {% endif %}
+                        </li>
+                        <div class="product-preview"></div>
                 {% endfor %}
               </ul>
               </div>
