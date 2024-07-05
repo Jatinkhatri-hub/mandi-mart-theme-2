@@ -518,23 +518,23 @@
   //   megaMenuItem.classList.toggle('.mega-menu__sub-active');
   // });
 
-  dropdownLinks.forEach(function(dropdown) {
-    const megaMenuItem = document.querySelector('.mega-menu__sub');
+  // dropdownLinks.forEach(function(dropdown) {
+  //   const megaMenuItem = document.querySelector('.mega-menu__sub');
 
-    dropdown.addEventListener('click', function(event) {
-      event.stopPropagation();
-      megaMenuItem.classList.toggle('nav-hidden');
-      megaMenuItem.classList.toggle('nav-active');
-    });
+  //   dropdown.addEventListener('click', function(event) {
+  //     event.stopPropagation();
+  //     megaMenuItem.classList.toggle('nav-hidden');
+  //     megaMenuItem.classList.toggle('nav-active');
+  //   });
 
     
 
-    document.querySelectorAll('.mega-menu__sub').forEach(function(menu) {
-      menu.addEventListener('click', function(event) {
-       event.stopPropagation();
-      });
-    });
-  })
+  //   document.querySelectorAll('.mega-menu__sub').forEach(function(menu) {
+  //     menu.addEventListener('click', function(event) {
+  //      event.stopPropagation();
+  //     });
+  //   });
+  // })
 
   // document.addEventListener('click', function(event) {
   //   dropdownLinks.forEach(function(dropdown) {
