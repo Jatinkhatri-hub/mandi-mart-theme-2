@@ -81,7 +81,7 @@
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child ">
                         {% for childTwo  in child.links %}
-                          <li class="">
+                          <li class="mega-menu__sub-child_item">
                             <a href="{{ childTwo.url }}">{{ childTwo.title }}</a>
                           </li>
                         {% endfor %}
