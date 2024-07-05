@@ -74,7 +74,7 @@
             </a>
 
             {% if link.links != blank %}
-              <div>
+              <div class="mega-menu__sub  nav-hidden">
               <ul class="mega-menu__sub  nav-hidden">
                 {% for child in link.links %}
                   {% assign child_collection_handle = child.url | remove: '/collections/' %}
