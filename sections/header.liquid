@@ -518,6 +518,16 @@
   //   megaMenuItem.classList.toggle('.mega-menu__sub-active');
   // });
 
+
+  dropdownLinks.forEach(function(dropdown) {
+    dropdown.addEventListener('click', function(event) {
+      event.stopPropagation();
+      const megaMenuItem = dropdown.querySelector('.mega-menu__sub');
+      megaMenuItem.classList.toggle('nav-hidden');
+      megaMenuItem.classList.toggle('nav-active');
+    });
+  });
+
   // dropdownLinks.forEach(function(dropdown) {
   //   const megaMenuItem = document.querySelector('.mega-menu__sub');
 
