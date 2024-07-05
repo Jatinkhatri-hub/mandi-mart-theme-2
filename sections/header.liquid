@@ -78,6 +78,9 @@
                 {% for child in link.links %}
                   <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}">
                     <a href="{{ child.url }}">{{ child.title }}</a>
+                    {% if collection.image != blank %}
+                      <img src="{{ collection.image | img_url: 'medium'}}" class="collection__featured-image">
+                    {% endif %}
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
                         {% for childTwo in child.links %}
@@ -495,7 +498,7 @@
         megaMenuSubChild.classList.toggle('sub-child-active');
       });
 
-    document.querySelectorAll('.mega-menu__sub-child').forEach(function(menu) {
+      document.querySelectorAll('.mega-menu__sub-child').forEach(function(menu) {
        menu.addEventListener('click', function(event) {
         event.stopPropagation();
        });
