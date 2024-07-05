@@ -735,6 +735,22 @@
   //     }
   //   });
   // });
+  document.addEventListener('click', function(event) {
+    dropdownLinks.forEach(function(dropdown) {
+      const megaMenuItem = dropdown.querySelector('.mega-menu__sub');
+      if (!dropdown.contains(event.target)) {
+        megaMenuItem.classList.add('nav-hidden');
+        megaMenuItem.classList.remove('nav-active');
+      }
+    });
+
+    document.querySelectorAll('.mega-menu__sub-child').forEach(function(menu) {
+      if (!menu.contains(event.target)) {
+        menu.classList.add('sub-child-hidden');
+        menu.classList.remove('sub-child-active');
+      }
+    });
+  });
 
   if (menuDrawerBtn && megaMenuNav && headerOverlay) {
     menuDrawerBtn.addEventListener('click', function() {
