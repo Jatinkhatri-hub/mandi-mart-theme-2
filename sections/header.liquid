@@ -86,7 +86,7 @@
                       {% endif %}
                       {{ child.title }}
                     </a>
-                    <div class="product-preview"></div>
+                    
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
                         {% for childTwo in child.links %}
@@ -98,7 +98,7 @@
                     {% endif %}
                   </li>
                 {% endfor %}
-                
+                <div class="product-preview"></div>
               </ul>
               </div>
             {% endif %}
