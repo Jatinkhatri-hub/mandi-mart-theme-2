@@ -77,11 +77,11 @@
               <ul class="mega-menu__sub  nav-hidden">
                 {% for child in link.links %}
                   {% assign child_collection_handle = link.url | remove: '/collections/' %}
-                  {% assign collection = collections[child_collection_handle] %}
+                  {% assign child_collection = collections[child_collection_handle] %}
                   <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}">
                     <a href="{{ child.url }}">{{ child.title }}</a>
                     {% if collection.image != blank %}
-                      <img src="{{ collection.image | img_url: 'medium'}}" class="collection-brand__featured-image">
+                      <img src="{{ child_collection.image | img_url: 'medium'}}" class="collection-brand__featured-image">
                     {% endif %}
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
