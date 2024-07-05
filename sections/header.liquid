@@ -80,7 +80,7 @@
                   {% assign child_collection = collections[child_collection_handle] %}
                   <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}">
                     <a href="{{ child.url }}">{{ child.title }}</a>
-                    {% if collection.image != blank %}
+                    {% if child_collection.image != blank %}
                       <img src="{{ child_collection.image | img_url: 'medium'}}" class="collection-brand__featured-image">
                     {% endif %}
                     {% if child.links != blank %}
