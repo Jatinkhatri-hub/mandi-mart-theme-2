@@ -454,11 +454,11 @@
   const subChildDropdown = document.querySelectorAll('.sub-child-dropdown');
 
   subChildDropdown.forEach(function(dropdown) {
-    const megaMenuSubChildItem = document.querySelector('.mega-menu__sub-child-item');
+    const megaMenuSubChild = document.querySelector('.mega-menu__sub-child');
 
     dropdown.addEventListener('click', function(event) {
       event.stopPropagation();
-      megaMenuSubChildItem.classList.toggle('')
+      megaMenuSubChildItem.classList.toggle('sub-child-hidden');
     })
 
   })
