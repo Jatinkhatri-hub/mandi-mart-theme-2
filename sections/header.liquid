@@ -76,8 +76,8 @@
             {% if link.links != blank %}
               <ul class="mega-menu__sub  nav-hidden">
                 {% for child in link.links %}
-                  {% assign collection_handle = link.url | remove: '/collections/' %}
-                  {% assign collection = collections[collection_handle] %}
+                  {% assign child_collection_handle = link.url | remove: '/collections/' %}
+                  {% assign collection = collections[child_collection_handle] %}
                   <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}">
                     <a href="{{ child.url }}">{{ child.title }}</a>
                     {% if collection.image != blank %}
