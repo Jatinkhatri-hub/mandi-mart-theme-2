@@ -76,7 +76,7 @@
             {% if link.links != blank %}
               <ul class="mega-menu__sub  nav-hidden">
                 {% for child in link.links %}
-                  <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdow {% endif %}">
+                  <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}">
                     <a href="{{ child.url }}">{{ child.title }}</a>
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
@@ -451,6 +451,7 @@
   const headerOverlay = document.querySelector('.header-class__overlay');
   const mobileSearchIcon = document.querySelector('.mobile-search-icon');
   const dropdownLinks = document.querySelectorAll('.dropdown');
+  const subchild
   
 
 
