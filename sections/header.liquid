@@ -528,64 +528,52 @@
     const mobileSearchIcon = document.querySelector('.mobile-search-icon');
     const dropdownLinks = document.querySelectorAll('.dropdown');
     const subChildDropdown = document.querySelectorAll('.sub-child-dropdown');
-    const dropdownItems = document.querySelectorAll('.mega-menu__sub-item');
+    const dropdownItems = document.querySelectorAll('.mega-menu__sub-item.sub-child-dropdown');
 
-dropdownItems.forEach(function(item) {
-  item.addEventListener('mouseenter', function() {
-    const collectionHandle = item.getAttribute('data-collection-handle');
-    const productPreview = item.querySelector('.product-preview');
-    console.log('Hover event on item with collection handle:', collectionHandle);
+    dropdownItems.forEach(function(item) {
+      item.addEventListener('mouseenter', function() {
+        const collectionHandle = item.getAttribute('data-collection-handle');
+        const productPreview = item.querySelector('.product-preview');
+        console.log('active');
 
-    // Check if products are already fetched
-    if (productPreview.innerHTML.trim() === '') {
-      console.log('Fetching products for collection handle:', collectionHandle);
-      fetchProducts(collectionHandle, productPreview);
-    } else {
-      console.log('Products already fetched for collection handle:', collectionHandle);
-    }
-  });
-});
-
-function fetchProducts(collectionHandle, container) {
-  console.log('Starting fetch for collection handle:', collectionHandle);
-  fetch(`/collections/${collectionHandle}/products.json`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Fetched data:', data);
-      const products = data.products;
-      const randomProducts = getRandomProducts(products, 2);
-
-      randomProducts.forEach(product => {
-        const productElement = createProductElement(product);
-        container.appendChild(productElement);
+        //check if product are already featched
+        if (productPreview.innerHTML.trim() === '') {
+          fetchProducts(collectionHandle, productPreview);
+        }
       });
-    })
-    .catch(error => console.error('Error fetching products:', error));
-}
+    });
 
-function getRandomProducts(products, count) {
-  console.log('Selecting random products');
-  const shuffled = products.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
+    function fetchProducts(collectionHandle, container) {
+      fetch(`/collections/${collectionHandle}/products.json`)
+      .then(response => response.json())
+      .then(data => {
+        const products = data.products;
+        const randomProducts = getRandomProducts(products, 2);
 
-function createProductElement(product) {
-  console.log('Creating product element for product:', product);
-  const productElement = document.createElement('div');
-  productElement.classList.add('product-item');
+        randomProducts.forEach(product => {
+          const productElement = createProductElement(product);
+          container.appendChild(productElement);
+        });
+      })
+      .catch(error => console.log('Error fetching products:', error));
+    }
 
-  productElement.innerHTML = `
-    <img src="${product.images[0].src}" alt="${product.title}" style="width: 100px; height: 100px; object-fit: cover;"/>
-    <p>${product.title}</p>
-  `;
+    function getRandomProducts(products, count) {
+      const shuffled = products.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, 2);
+    }
 
-  return productElement;
-}
+    function createProductElement(product) {
+      const productElement = document.createElement('div');
+      productElement.classList.add('product-item');
+
+      productElement.innerHTML = `
+        <img src="${product.images[0].src}" alt="${product.title}" style="width: 100px; height: 100px; object-fit: cover;"/>
+        <p>${product.title}</p>
+      `;
+
+      return productElement;
+    }
 
 
   // subChildDropdown.forEach(function(dropdown) {
