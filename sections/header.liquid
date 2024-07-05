@@ -60,17 +60,17 @@
           </form>
         </div>
         {% for link in section.settings.mega_navbar.links %}
-          {%  assign collection_handle = link.url |  remove: '/collections/' %}
-          {% assign collection = collections[collection_handle] %} 
+          {% assign collection_handle = link.url | remove: '/collections/' %}
+          {% assign collection = collections[collection_handle] %}
           <li class="mega__nav-link {% if link.links != blank %} dropdown {% endif %}">
             <a href="{{ link.url }}">
-            {% if collection.image != blank %}  
-              <img src="{{ collection.image | img_url: 'medium'}}" class="collection__featured-image">
-            {% endif %}
-            {{ link.title }}            
-            {% if link.links != blank %}
-              {% render 'icon-arrow-down' %}
-            {% endif %}
+              {% if collection.image != blank %}
+                <img src="{{ collection.image | img_url: 'medium'}}" class="collection__featured-image">
+              {% endif %}
+              {{ link.title }}
+              {% if link.links != blank %}
+                {% render 'icon-arrow-down' %}
+              {% endif %}
             </a>
 
             {% if link.links != blank %}
@@ -80,7 +80,7 @@
                     <a href="{{ child.url }}">{{ child.title }}</a>
                     {% if child.links != blank %}
                       <ul class="mega-menu__sub-child sub-child-hidden ">
-                        {% for childTwo  in child.links %}
+                        {% for childTwo in child.links %}
                           <li class="mega-menu__sub-child-item">
                             <a href="{{ childTwo.url }}">{{ childTwo.title }}</a>
                           </li>
@@ -98,7 +98,6 @@
   {% endif %}
   <div class="header-class__overlay"></div>
 </header>
-
 
 
 <style>
@@ -225,18 +224,21 @@
     color: rgb(var(--color-foreground));
   }
 
-  /* .mega-menu__sub {
-    position: absolute;
-    top: 0;
-    margin-top: 8rem;
-     transform: translate(-50%); 
-    background-color: rgb(var(--color-background));
-    width: 800px;
-    left: -9999px;
-    opacity: 0;
-    transition: left 0s 0.4s
-    , opacity 0.4s;
-  } */
+
+  /*
+   .mega-menu__sub {
+   position: absolute;
+   top: 0;
+   margin-top: 8rem;
+   transform: translate(-50%);
+   background-color: rgb(var(--color-background));
+   width: 800px;
+   left: -9999px;
+   opacity: 0;
+   transition: left 0s 0.4s
+   , opacity 0.4s;
+   }
+*/
 
   .mega-menu__sub {
     position: absolute;
@@ -248,17 +250,22 @@
     /* opacity: 0; */
   }
 
-  /* .mega__nav-link:hover .mega-menu__sub {
-    left: 50%;
-    opacity: 1;
-    transition: left 0s
-    , opacity 0.4s;
-  } */
 
-  /* .mega__nav-link:hover .mega-menu__sub {
-  display: block;
-} */
-  .mega-menu__sub-active {
+  /*
+   .mega__nav-link:hover .mega-menu__sub {
+   left: 50%;
+   opacity: 1;
+   transition: left 0s
+   , opacity 0.4s;
+   }
+*/
+
+
+  /*
+   .mega__nav-link:hover .mega-menu__sub {
+   display: block;
+   }
+*/.mega-menu__sub-active {
     display: block;
   }
 
@@ -269,13 +276,17 @@
 
   .mega-menu__sub-child {
     column-count: 3;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-flow: column;
-    grid-auto-rows: auto;
-    gap: 10px;
-    max-height: calc(18 * 50px + 17 * 10px);
-    overflow-y: auto; */
+
+
+    /*
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   grid-auto-flow: column;
+   grid-auto-rows: auto;
+   gap: 10px;
+   max-height: calc(18 * 50px + 17 * 10px);
+   overflow-y: auto;
+*/
   }
 
   .sub-child-hidden {
@@ -347,9 +358,9 @@
 
     }
     .header__logo {
-    display: block;
-    /* transform: translateX(-5rem); */
-}
+      display: block;
+      /* transform: translateX(-5rem); */
+    }
     .mega-menu__nav {
       position: fixed;
       top: 0;
@@ -425,7 +436,6 @@
       display: inline-block;
     }
 
-    
 
   }
 
@@ -478,12 +488,12 @@
   // })
   
     document.querySelectorAll('.sub-child-dropdown').forEach(function(dropdown) {
-    dropdown.addEventListener('click', function(event) {
-      event.stopPropagation();
-      const megaMenuSubChild = dropdown.querySelector('.mega-menu__sub-child');
-      megaMenuSubChild.classList.toggle('sub-child-hidden');
-      megaMenuSubChild.classList.toggle('sub-child-active');
-    });
+      dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const megaMenuSubChild = dropdown.querySelector('.mega-menu__sub-child');
+        megaMenuSubChild.classList.toggle('sub-child-hidden');
+        megaMenuSubChild.classList.toggle('sub-child-active');
+      });
   });
 
 
@@ -548,10 +558,7 @@
   } else {
     console.error('Menu drawer button, mega menu nav, or header overlay not found');
   }
-});
-
-
-  
+  });
 </script>
 
 {% schema %}
