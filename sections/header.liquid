@@ -547,7 +547,9 @@
       .then(response => response.json())
       .then(data => {
         const products = data.products;
-        const randomProducts = getRand
+        const randomProducts = getRandomProducts(products, 2);
+
+        randomProducts.forEach()
       })
     }
 
