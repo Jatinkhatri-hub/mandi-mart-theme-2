@@ -332,6 +332,22 @@
     display: block;
   }
 
+  .product-preview {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px; /* Adjust width as needed */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.mega-menu__sub-item:hover .product-preview {
+  display: block;
+}
+
   .mega-menu__sub-child-item {
     list-style: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
