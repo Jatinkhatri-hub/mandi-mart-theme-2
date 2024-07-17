@@ -1,7 +1,7 @@
 {{ 'product-card-new.css' | asset_url | stylesheet_tag }}
 {{ 'add-to-cart.js'|  asset_url |  script_tag }}
 
-<div class="custom-collection-product-grid">
+<div class="custom-collection-product-grid page-width">
   {% if collection.filters.size > 0 %}
     <div class="custom-filters">
       <form>
