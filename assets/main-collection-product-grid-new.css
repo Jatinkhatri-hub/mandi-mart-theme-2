@@ -1,4 +1,4 @@
 .custom-filters-form {
   display: flex;
-  flex
+  flex-direction: row;
 }
