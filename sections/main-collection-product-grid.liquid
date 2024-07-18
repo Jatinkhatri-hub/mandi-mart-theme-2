@@ -77,7 +77,8 @@
                               {% if filter_value.active -%}
                               checked{%- endif %}
                               {% if filter_value.count == 0 and filter_value.active == false -%}
-                              disabled{%- endif %}>
+                              disabled{%- endif %}
+                              class="hidden-radio-button">
                             <span>
                               {%- case filter_value.display.type -%}
                                 {%- when 'colors' -%}
