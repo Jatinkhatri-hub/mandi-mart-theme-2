@@ -21,14 +21,14 @@
               </summary>
 
               <div class="collection__filter-dropdown">
-                <div>
+                {% comment %} <div>
                   <p>{{ filter.active_values.size }} selected</p>
                   {%- if filter.active_values.size > 0 -%}
                     <p>
                       <a href="{{ filter.url_to_remove }}">Reset</a>
                     </p>
                   {%- endif -%}
-                </div>
+                </div> {% endcomment %}
                 {%- case filter.type -%}
                   {%- when 'boolean' -%}
                     <ul>
