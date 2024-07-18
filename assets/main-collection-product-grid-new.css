@@ -211,7 +211,9 @@
     align-items: center;
   }
 
-  .c
+  .collection__reset-filter-btn {
+    align-items: center;
+  }
   
 }
 
