@@ -180,8 +180,11 @@
     font-size: 2rem;
     color: #074542;
     display: flex;
-    padding: 1rem
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
   }
+  .collection__custom-filter 
 
   .custom-filters-form {
     flex-direction: column;
