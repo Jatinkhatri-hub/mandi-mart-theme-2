@@ -42,7 +42,9 @@
                             {% if filter.true_value.active -%}
                             checked{%- endif %}
                             {% if filter.true_value.count == 0 and filter.true_value.active == false -%}
-                            disabled{%- endif -%}>{{ filter.true_value.label }}</label>
+                            disabled{%- endif -%}
+                            class="hidden-radio"
+                            >{{ filter.true_value.label }}</label>
                       </li>
                       <li>
                         <label for="Filter-{{ filter.param_name }}-{{ filter.false_value.value }}">
