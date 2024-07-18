@@ -176,7 +176,9 @@
 
 @media screen and (max-width: 896px) {
 
-  .custom-fi
+  .custom-filters {
+    margin: auto;
+  }
 
   .collection__mobile-filter {
     font-size: 2rem;
