@@ -44,7 +44,8 @@
 }
 
 .collection__filter-dropdown {
-  displ
+  position: relative;
+  z-index: ;
 }
 
 .collection__custom-sort-by {
