@@ -176,8 +176,8 @@
 
 @media screen and (max-width: 896px) {
 
-  .custom-filters {
-    
+  .custom-filters-form {
+    flex-direction: column;
   }
   
 }
