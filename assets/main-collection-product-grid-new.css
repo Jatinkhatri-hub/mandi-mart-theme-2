@@ -77,7 +77,7 @@
   height: 4.8rem;
 }
 
-
+.custom-select select:a
 
 .collection__reset-filter-btn {
   display: flex;
