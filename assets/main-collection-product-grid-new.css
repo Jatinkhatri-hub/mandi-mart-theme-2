@@ -35,7 +35,8 @@
 }
 
 .collection__filter-box-title svg {
-  width: 18px
+  width: 18px;
+  height: 1.px;
 }
 
 .collection__reset-filter-btn {
