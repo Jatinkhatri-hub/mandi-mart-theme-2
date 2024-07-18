@@ -82,7 +82,9 @@
   position: absolute;
 }
 
-.c
+.custom-select svg path {
+  fill: #
+}
 
 .custom-select select:active {
   border: none;
