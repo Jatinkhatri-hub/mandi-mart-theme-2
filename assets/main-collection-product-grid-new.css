@@ -188,12 +188,12 @@
     justify-content: space-between;
     align-items: center;
   }
-  .collection__custom-filter svg {
+  .collection__mobile-filter svg {
     width: 18px;
     height: 18px;
   }
 
-  .collection__custom-filter svg path {
+  .collection__mobile-filter svg path {
     fill: #074542;
   }
 
