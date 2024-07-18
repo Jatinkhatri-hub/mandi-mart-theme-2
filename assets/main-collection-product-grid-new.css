@@ -187,7 +187,10 @@
   .collection__custom-filter svg {
     width: 18px;
     height: 18px;
-    
+  }
+
+  .collection__custom-filter svg path {
+    fill: #074542;
   }
 
   .custom-filters-form {
