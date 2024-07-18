@@ -164,7 +164,7 @@
             </details>
           </div>
         {%- endfor -%}
-
+        <div>
         <select id="sort-by">
           {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
@@ -178,6 +178,7 @@
             </option>
           {% endfor %}
         </select>
+        <div></div>
 
         <div class="collection__reset-filter-btn">
           <p class="collection__reset-filter-text">
