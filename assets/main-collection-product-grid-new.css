@@ -35,5 +35,6 @@
 
 .collection__reset-filter-btn {
   display: flex;
-  align-items: ;
+  align-items: end;
+  
 }
