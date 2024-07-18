@@ -50,10 +50,12 @@
   width: 35rem;
   border-radius: .5rem;
   border: 1px solid #074542;
+  display: flex;
+  justify-content: center;
 }
 
 .collection__filter-dropdown ul {
-  
+  padding: 0;
 }
 
 .collection__custom-sort-by {
