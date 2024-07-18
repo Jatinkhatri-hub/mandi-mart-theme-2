@@ -12,5 +12,9 @@
 .collection__filter-label {
   font-size: 2rem;
   color: #074542;
-  text-transform: ;
+  text-transform: uppercase;
+}
+
+.collection__filter-box {
+  font-size: 1.;
 }
