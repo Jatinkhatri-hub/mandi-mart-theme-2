@@ -124,4 +124,8 @@
   display: none;
 }
 
-.hidden-radio-button + label
+.hidden-radio-button + label {
+  cursor: pointer;
+}
+
+.hi
