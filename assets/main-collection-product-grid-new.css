@@ -76,7 +76,10 @@
   height: 4.8rem;
 }
 
-.custom-select s
+.custom-select svg {
+  widht: 1.8rem;
+  
+}
 
 .custom-select select:active {
   border: none;
