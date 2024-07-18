@@ -54,6 +54,7 @@
   border: 1px solid #074542;
   border-radius: .5rem;
   display: flex;
+  flex-direction: ;
 }
 
 .custom-select select {
