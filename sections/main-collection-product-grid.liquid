@@ -67,7 +67,7 @@
                   {%- when 'list' -%}
                     <ul>
                       {%- for filter_value in filter.values -%}
-                        <li>
+                        <li class="li__remove-default-style">
                           <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                             <input
                               type="radio"
