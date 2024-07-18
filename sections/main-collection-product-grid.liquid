@@ -1,5 +1,5 @@
 {{ 'product-card-new.css' | asset_url | stylesheet_tag }}
-{{ 'add-to-cart.js'|  asset_url |  script_tag }}
+{{ 'add-to-cart.js' | asset_url | script_tag }}
 {{ 'main-collection-product-grid-new.css' | asset_url | stylesheet_tag }}
 
 <div class="custom-collection-product-grid page-width">
@@ -196,8 +196,8 @@
 
   <div class="container__custom-product-grid">
     {% for product in collection.products %}
-      {%  render 'product-card-new'
-      , product: product      
+      {% render 'product-card-new'
+        , product: product
       %}
     {% endfor %}
 
