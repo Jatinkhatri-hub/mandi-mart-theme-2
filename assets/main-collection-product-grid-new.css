@@ -33,4 +33,7 @@
   padding: 1rem;
 }
 
-.collection__reset-filter
+.collection__reset-filter-btn {
+  display: flex;
+  flex
+}
