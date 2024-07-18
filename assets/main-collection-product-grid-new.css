@@ -123,3 +123,5 @@
 .hidden-radio-button {
   display: none;
 }
+
+.hidden-radio-button + label
