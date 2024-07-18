@@ -91,7 +91,7 @@
 .custom-select select:focus {
   outline: none;
   border: none;
-  box
+  box-shadow: none;
 }
 
 .collection__reset-filter-btn {
@@ -119,3 +119,5 @@
   text-decoration: none;
   color: #fff;
 }
+
+.hidden
