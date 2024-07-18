@@ -45,7 +45,8 @@
 
 .collection__filter-dropdown {
   position: relative;
-  z-index: ;
+  z-index: 10;
+  background-color: #fff;
 }
 
 .collection__custom-sort-by {
