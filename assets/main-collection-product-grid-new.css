@@ -34,6 +34,10 @@
   padding: 1rem;
 }
 
+.collection__filter-box-title svg {
+  width: 18px
+}
+
 .collection__reset-filter-btn {
   display: flex;
   align-items: end;
