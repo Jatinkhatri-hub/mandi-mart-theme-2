@@ -35,9 +35,11 @@
 }
 
 .collection__filter-box-title svg {
-  width: 18px;
-  height: 1.px;
+  width: 1.8rem;
+  height: 1.8rem;
 }
+
+.co
 
 .collection__reset-filter-btn {
   display: flex;
