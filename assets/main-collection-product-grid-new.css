@@ -48,7 +48,10 @@
   flex-direction: column;
 }
 
-custom
+.custom-select select {
+  appearance: none;
+  w
+}
 
 .collection__reset-filter-btn {
   display: flex;
