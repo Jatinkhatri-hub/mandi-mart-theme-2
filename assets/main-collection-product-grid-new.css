@@ -212,7 +212,7 @@
   }
 
   .collection__reset-filter-btn {
-    align-items: center;
+    justify-content: center;
   }
   
 }
