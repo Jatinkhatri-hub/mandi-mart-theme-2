@@ -160,7 +160,8 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  font
+  font-weight: 500;
+  color: #000;
 }
 
 
