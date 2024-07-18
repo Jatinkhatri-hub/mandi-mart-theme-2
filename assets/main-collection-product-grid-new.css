@@ -178,6 +178,7 @@
 
   .custom-filters {
     border: 1px solid #e4e4e4;
+    border-radius: .5rem;
   }
 
   .collection__mobile-filter {
