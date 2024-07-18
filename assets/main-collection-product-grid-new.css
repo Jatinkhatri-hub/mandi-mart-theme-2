@@ -120,4 +120,6 @@
   color: #fff;
 }
 
-.hidden
+.hidden-radio-button {
+  display: none;
+}
