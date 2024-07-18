@@ -50,7 +50,8 @@
 
 .custom-select select {
   appearance: none;
-  w
+  width: 100%;
+  
 }
 
 .collection__reset-filter-btn {
