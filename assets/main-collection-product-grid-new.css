@@ -66,7 +66,8 @@
   width: 100%;
   height: max-content;
   padding: 0.2em;
-
+  width: 100%;
+  
 }
 
 .collection__reset-filter-btn {
