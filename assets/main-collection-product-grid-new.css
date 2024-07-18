@@ -185,7 +185,7 @@
     color: #074542;
     display: flex;
     padding: 1rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   .collection__custom-filter svg {
