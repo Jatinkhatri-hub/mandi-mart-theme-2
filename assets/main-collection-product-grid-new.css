@@ -59,8 +59,8 @@
 .custom-select select {
   appearance: none;
   -webkit-appearance: none;
-  width: 28.5;
-  font-size: 1.065rem;
+  width: 28.5rem;
+  font-size: 1.6rem;
   background-color: #fff;
   border: 0;
   color: #595959;
