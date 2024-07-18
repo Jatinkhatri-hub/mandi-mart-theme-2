@@ -39,7 +39,9 @@
   height: 1.8rem;
 }
 
-.co
+.collection__filter-box-title svg path {
+  fill: ;
+}
 
 .collection__reset-filter-btn {
   display: flex;
