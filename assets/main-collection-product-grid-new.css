@@ -50,6 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: ;
 }
 
 .collection__reset-filter-text a {
