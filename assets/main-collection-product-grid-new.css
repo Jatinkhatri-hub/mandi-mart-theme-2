@@ -41,5 +41,7 @@
 .collection__reset-filter-text {
   width: 28.5rem;
   height: 5.5rem;
-  font
+  font-size: 2rem;
+  color: #fff;
+  
 }
