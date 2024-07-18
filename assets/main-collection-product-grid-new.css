@@ -63,8 +63,8 @@
   border: none;
   color: #074542;
   cursor: pointer;
-  width: 28.rem;
-  height: 5.5rem;
+  width: 100%;
+  height: max-content;
 
 }
 
