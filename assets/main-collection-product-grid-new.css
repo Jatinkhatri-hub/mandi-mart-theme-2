@@ -187,6 +187,7 @@
     padding: 1rem;
     justify-content: space-between;
     align-items: center;
+    text-transform: uppercase;
   }
   .collection__mobile-filter svg {
     width: 18px;
