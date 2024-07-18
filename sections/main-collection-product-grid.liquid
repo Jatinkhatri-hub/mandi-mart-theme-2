@@ -164,7 +164,8 @@
             </details>
           </div>
         {%- endfor -%}
-        <div>
+        <div class="collection__custom-sort-by">
+          
         <select id="sort-by">
           {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
