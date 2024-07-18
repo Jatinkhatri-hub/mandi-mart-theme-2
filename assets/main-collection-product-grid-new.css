@@ -159,7 +159,8 @@
 .li__remove-default-style label {
   display: flex;
   align-items: center;
-  
+  gap: 2rem;
+  font
 }
 
 
