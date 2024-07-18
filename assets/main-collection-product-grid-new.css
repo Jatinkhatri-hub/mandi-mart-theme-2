@@ -53,6 +53,7 @@
   height: 5.5rem;
   border: 1px solid #074542;
   border-radius: .5rem;
+  display: flex;
 }
 
 .custom-select select {
