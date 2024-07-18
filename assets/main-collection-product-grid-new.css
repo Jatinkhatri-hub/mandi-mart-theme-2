@@ -51,7 +51,8 @@
 .custom-select select {
   appearance: none;
   width: 100%;
-  
+  background-color: #fff;
+  font-size: 1.;
 }
 
 .collection__reset-filter-btn {
