@@ -43,7 +43,7 @@
                             checked{%- endif %}
                             {% if filter.true_value.count == 0 and filter.true_value.active == false -%}
                             disabled{%- endif -%}
-                            class="hidden-radio"
+                            class="hidden-radio-button"
                             >{{ filter.true_value.label }}</label>
                       </li>
                       <li>
@@ -56,7 +56,8 @@
                             {% if filter.false_value.active -%}
                             checked{%- endif %}
                             {% if filter.false_value.count == 0 and filter.false_value.active == false -%}
-                            disabled{%- endif %}>{{ filter.false_value.label }}</label>
+                            disabled{%- endif %}
+                            class="hidden-radio-button">{{ filter.false_value.label }}</label>
                       </li>
                     </ul>
 
