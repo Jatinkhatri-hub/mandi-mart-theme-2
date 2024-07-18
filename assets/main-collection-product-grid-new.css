@@ -90,7 +90,8 @@
 
 .custom-select select:focus {
   outline: none;
-  border: none
+  border: none;
+  box
 }
 
 .collection__reset-filter-btn {
