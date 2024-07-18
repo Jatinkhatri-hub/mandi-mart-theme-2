@@ -52,7 +52,8 @@
   appearance: none;
   width: 100%;
   background-color: #fff;
-  font-size: 1.;
+  font-size: 1.6rem;
+  border
 }
 
 .collection__reset-filter-btn {
