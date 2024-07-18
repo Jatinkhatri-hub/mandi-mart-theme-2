@@ -47,6 +47,7 @@
   position: relative;
   z-index: 10;
   background-color: #fff;
+  width: 350px;
 }
 
 .collection__custom-sort-by {
