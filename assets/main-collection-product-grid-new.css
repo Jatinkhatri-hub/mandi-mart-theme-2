@@ -156,6 +156,11 @@
   font-size: 1.8rem;
 }
 
+.li__remove-default-style label {
+  display: flex;
+  align-items: center;
+  
+}
 
 
 
