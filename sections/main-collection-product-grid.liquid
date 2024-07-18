@@ -61,9 +61,9 @@
                       </li>
                     </ul>
 
-                    <div>
+                    {% comment %} <div>
                       <input type="submit" value="Apply">
-                    </div>
+                    </div> {% endcomment %}
                   {%- when 'list' -%}
                     <ul>
                       {%- for filter_value in filter.values -%}
@@ -121,9 +121,9 @@
                       {%- endfor -%}
                     </ul>
 
-                    <div>
+                    {% comment %} <div>
                       <input type="submit" value="Apply">
-                    </div>
+                    </div> {% endcomment %}
                   {%- when 'price_range' -%}
                     <div class="filter-group-display__price-range">
                       <div class="filter-group-display__price-range-from">
