@@ -48,6 +48,12 @@
   flex-direction: column;
 }
 
+.custom-select {
+  width: 28.5rem;
+  height: 5.5rem;
+  
+}
+
 .custom-select select {
   appearance: none;
   width: 100%;
