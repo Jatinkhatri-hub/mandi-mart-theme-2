@@ -13,10 +13,10 @@
             <summary>
               <div class="collection__filter-box-title">
                 <span>{{ filter.label }}</span>
-                {% render 'icon' %}
-                {%- if filter.active_values.size > 0 -%}
+                {% render 'icon-arrow-down' %}
+                {% comment %} {%- if filter.active_values.size > 0 -%}
                   <span>({{ filter.active_values.size }})</span>
-                {%- endif -%}
+                {%- endif -%} {% endcomment %}
               </div>
             </summary>
 
