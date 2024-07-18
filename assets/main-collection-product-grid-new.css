@@ -24,5 +24,6 @@
 .collection__filter-box-title {
   font-size: 1.8rem;
   color: #074542;
-  font
+  text-transform: uppercase;
+  
 }
