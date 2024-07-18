@@ -53,7 +53,9 @@
   width: 100%;
   background-color: #fff;
   font-size: 1.6rem;
-  border
+  border: none;
+  color: #074542;
+  cursor: pointer;
 }
 
 .collection__reset-filter-btn {
