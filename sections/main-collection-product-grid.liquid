@@ -247,6 +247,32 @@
     }
   }
 
+
+  document.querySelectorAll('.hidden-radio-button').forEach(function(radioButton) {
+    radioButton.addEventListener('change', function() {
+      var paramName = this.name;
+      var value = this.value;
+
+      Shopify.queryParams[paramName] = value;
+      history.replaceState(null, '', '?' + new URLSearchParams(Shopify.queryParams).toString());
+
+      fetch(window.location.href, {
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        }
+      })
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(html) {
+        var newDocument = new DOMParser().parseFromString(html, 'text/html');
+        var newContent = newDocument.querySelector('.container__custom-product-grid').innerHTML;
+
+        document.querySelector('.container__custom-product-grid').innerHTML = newContent;
+      });
+    });
+  });
+
   // Update sort_by query parameter on select change
   document.querySelector('#sort-by').addEventListener('change', function(e) {
     var value = e.target.value;
