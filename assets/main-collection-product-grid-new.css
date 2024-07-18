@@ -73,6 +73,7 @@
   margin: 0;
   background-image: none;
   display: block;
+  text-transform: uppercase;
 }
 
 .collection__reset-filter-btn {
