@@ -43,6 +43,10 @@
   fill: #074542;
 }
 
+.collection__filter-dropdown {
+  displ
+}
+
 .collection__custom-sort-by {
   display: flex;
   flex-direction: column;
