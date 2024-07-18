@@ -179,7 +179,8 @@
   .collection__mobile-filter {
     font-size: 2rem;
     color: #074542;
-    
+    display: flex;
+    padding: 1rem
   }
 
   .custom-filters-form {
