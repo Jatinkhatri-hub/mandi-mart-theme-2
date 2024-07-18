@@ -88,8 +88,9 @@
   fill: #074542;
 }
 
-.custom-select select:active {
-  border: none;
+.custom-select select:focus {
+  outline: none;
+  
 }
 
 .collection__reset-filter-btn {
