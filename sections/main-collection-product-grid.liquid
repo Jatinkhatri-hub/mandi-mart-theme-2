@@ -241,8 +241,9 @@
             {% if paginate.previous %}
             href="{{ paginate.previous.url }}"
             {% endif %}
-            class="pagination__item {% if paginate.previous %} paginate-active">{% render 'icon-arrow-left' %}</a>
-          {% endif %}
+            class="pagination__item {% if paginate.previous %} paginate-active 
+            {%  else %} paginate-deactive {% endif %}">{% render 'icon-arrow-left' %}</a>
+          
           {% for part in paginate.parts %}
             {% if part.is_link %}
               <a href="{{ part.url }}" class="pagination__item">{{ part.title }}</a>
