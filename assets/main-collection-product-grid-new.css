@@ -207,7 +207,7 @@
   }
 
   .visible {
-    display: none !important;
+    display: none;
   }
 
   .collection__custom-filter {
