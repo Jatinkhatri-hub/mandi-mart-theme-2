@@ -210,6 +210,10 @@
     padding-inline: 2rem;
   }
 
+  .collection__filter-label {
+    align-self: baseline;
+  }
+
   .collection__filter-box {
     width: 100%;
   }
