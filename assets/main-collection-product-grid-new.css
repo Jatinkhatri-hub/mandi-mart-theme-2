@@ -213,12 +213,12 @@
   }
 
   .collection__custom-sort-by {
-    align-items: center;
+    align-items: start;
   }
 
 
   .collection__reset-filter-btn {
-    justify-content: center;
+    justify-content: start;
   }
   
 }
