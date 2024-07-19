@@ -216,7 +216,11 @@
     align-items: center;
   }
 
-  .custom
+  .custom-select {
+    width: 100%;
+  }
+
+  .custom-select fi
 
 
   .collection__reset-filter-btn {
