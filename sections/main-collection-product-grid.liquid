@@ -19,20 +19,20 @@
                   <span>{{ filter.label }}</span>
                   {% render 'icon-arrow-down' %}
                 {% comment %} {%- if filter.active_values.size > 0 -%}
-                                                                                          <span>({{ filter.active_values.size }})</span>
-                                                                                {%- endif -%} {% endcomment %}
+                                                                                                            <span>({{ filter.active_values.size }})</span>
+                                                                                                {%- endif -%} {% endcomment %}
                 </div>
               </summary>
 
               <div class="collection__filter-dropdown">
                 {% comment %} <div>
-                                                                        <p>{{ filter.active_values.size }} selected</p>
-                                                                        {%- if filter.active_values.size > 0 -%}
-                                                                          <p>
-                                                                            <a href="{{ filter.url_to_remove }}">Reset</a>
-                                                                          </p>
-                                                                        {%- endif -%}
-                                                                </div> {% endcomment %}
+                                                                                          <p>{{ filter.active_values.size }} selected</p>
+                                                                                          {%- if filter.active_values.size > 0 -%}
+                                                                                            <p>
+                                                                                              <a href="{{ filter.url_to_remove }}">Reset</a>
+                                                                                            </p>
+                                                                                          {%- endif -%}
+                                                                                </div> {% endcomment %}
                 {%- case filter.type -%}
                   {%- when 'boolean' -%}
                     <ul>
@@ -65,8 +65,8 @@
                     </ul>
 
                   {% comment %} <div>
-                                                                                  <input type="submit" value="Apply">
-                                                                          </div> {% endcomment %}
+                                                                                                      <input type="submit" value="Apply">
+                                                                                            </div> {% endcomment %}
                   {%- when 'list' -%}
                     <ul>
                       {%- for filter_value in filter.values -%}
@@ -125,8 +125,8 @@
                     </ul>
 
                   {% comment %} <div>
-                                                                                  <input type="submit" value="Apply">
-                                                                          </div> {% endcomment %}
+                                                                                                      <input type="submit" value="Apply">
+                                                                                            </div> {% endcomment %}
                   {%- when 'price_range' -%}
                     <div class="filter-group-display__price-range">
                       <div class="filter-group-display__price-range-from">
@@ -164,8 +164,8 @@
                     </div>
 
                 {% comment %} <div class="filter-group-display__submit">
-                                                                            <input type="submit" value="Apply">
-                                                                    </div> {% endcomment %}
+                                                                                              <input type="submit" value="Apply">
+                                                                                    </div> {% endcomment %}
                 {%- endcase -%}
               </div>
             </details>
@@ -259,7 +259,7 @@
             {% endif %}
             class="pagination__item {% if paginate.next %} paginate-active 
               {%  else %} paginate-deactive {% endif %}">
-{% render 'icon-arrow-right' %}</a>
+            {% render 'icon-arrow-right' %}</a>
 
         </nav>
       {% endif %}
@@ -268,36 +268,82 @@
 </div>
 
 <script>
-  const fiterForm = document.querySelector('.custom-filters-form');
-  const filterMobileBtn = document.querySelector('.collection__mobile-filter');
 
-  Shopify.queryParams = {};
+  document.querySelectorAll('.hidden-radio-button').forEach(function(radioButton) {
+  radioButton.addEventListener('change', function() {
+    var paramName = this.name;
+    var value = this.value;
 
-  // Preserve existing query parameters
-  if (location.search.length) {
-    var params = location.search.substr(1).split('&');
+    Shopify.queryParams[paramName] = value;
+    var newQueryString = new URLSearchParams(Shopify.queryParams).toString();
+    var newUrl = window.location.pathname + '?' + newQueryString;
 
-    for (var i = 0; i < params.length; i++) {
-      var keyValue = params[i].split('=');
+    history.replaceState(null, '', newUrl);
 
-      if (keyValue.length) {
-        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+    fetch(newUrl, {
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
       }
-    }
+    })
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(html) {
+      var newDocument = new DOMParser().parseFromString(html, 'text/html');
+      var newContent = newDocument.querySelector('.filter-collection__page-width').innerHTML;
+
+      document.querySelector('.filter-collection__page-width').innerHTML = newContent;
+
+      // Re-attach event listeners to the new content
+      attachEventListeners();
+    });
+  });
+  });
+
+  function attachPaginationEventListeners() {
+  document.querySelectorAll('.pagination__item').forEach(function(paginationItem) {
+    paginationItem.addEventListener('click', function(e) {
+      e.preventDefault();
+      var newUrl = paginationItem.getAttribute('href');
+
+      if (newUrl) {
+        history.pushState(null, '', newUrl);
+
+        fetch(newUrl, {
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        })
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(html) {
+          var newDocument = new DOMParser().parseFromString(html, 'text/html');
+          var newContent = newDocument.querySelector('.filter-collection__page-width').innerHTML;
+
+          document.querySelector('.filter-collection__page-width').innerHTML = newContent;
+
+          // Re-attach event listeners to the new content
+          attachEventListeners();
+        });
+      }
+    });
+  });
   }
 
-  
-
-
+  function attachEventListeners() {
   document.querySelectorAll('.hidden-radio-button').forEach(function(radioButton) {
     radioButton.addEventListener('change', function() {
       var paramName = this.name;
       var value = this.value;
 
       Shopify.queryParams[paramName] = value;
-      history.replaceState(null, '', '?' + new URLSearchParams(Shopify.queryParams).toString());
+      var newQueryString = new URLSearchParams(Shopify.queryParams).toString();
+      var newUrl = window.location.pathname + '?' + newQueryString;
 
-      fetch(window.location.href, {
+      history.replaceState(null, '', newUrl);
+
+      fetch(newUrl, {
         headers: {
           'X-Requested-With': 'XMLHttpRequest'
         }
@@ -307,20 +353,105 @@
       })
       .then(function(html) {
         var newDocument = new DOMParser().parseFromString(html, 'text/html');
-        var newContent = newDocument.querySelector('.container__custom-product-grid').innerHTML;
+        var newContent = newDocument.querySelector('.filter-collection__page-width').innerHTML;
 
-        document.querySelector('.container__custom-product-grid').innerHTML = newContent;
+        document.querySelector('.filter-collection__page-width').innerHTML = newContent;
+
+        // Re-attach event listeners to the new content
+        attachEventListeners();
       });
     });
   });
 
+  attachPaginationEventListeners();
+  }
+
+  // Initial attachment of event listeners
+  attachEventListeners();
+
   // Update sort_by query parameter on select change
   document.querySelector('#sort-by').addEventListener('change', function(e) {
-    var value = e.target.value;
+  var value = e.target.value;
 
-    Shopify.queryParams.sort_by = value;
-    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  Shopify.queryParams.sort_by = value;
+  var newQueryString = new URLSearchParams(Shopify.queryParams).toString();
+  var newUrl = window.location.pathname + '?' + newQueryString;
+
+  history.replaceState(null, '', newUrl);
+
+  fetch(newUrl, {
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
+  })
+  .then(function(response) {
+    return response.text();
+  })
+  .then(function(html) {
+    var newDocument = new DOMParser().parseFromString(html, 'text/html');
+    var newContent = newDocument.querySelector('.filter-collection__page-width').innerHTML;
+
+    document.querySelector('.filter-collection__page-width').innerHTML = newContent;
+
+    // Re-attach event listeners to the new content
+    attachEventListeners();
   });
+  });
+
+
+  const fiterForm = document.querySelector('.custom-filters-form');
+  const filterMobileBtn = document.querySelector('.collection__mobile-filter');
+
+  // Shopify.queryParams = {};
+
+  // // Preserve existing query parameters
+  // if (location.search.length) {
+  //   var params = location.search.substr(1).split('&');
+
+  //   for (var i = 0; i < params.length; i++) {
+  //     var keyValue = params[i].split('=');
+
+  //     if (keyValue.length) {
+  //       Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+  //     }
+  //   }
+  // }
+
+  
+
+
+  // document.querySelectorAll('.hidden-radio-button').forEach(function(radioButton) {
+  //   radioButton.addEventListener('change', function() {
+  //     var paramName = this.name;
+  //     var value = this.value;
+
+  //     Shopify.queryParams[paramName] = value;
+  //     history.replaceState(null, '', '?' + new URLSearchParams(Shopify.queryParams).toString());
+
+  //     fetch(window.location.href, {
+  //       headers: {
+  //         'X-Requested-With': 'XMLHttpRequest'
+  //       }
+  //     })
+  //     .then(function(response) {
+  //       return response.text();
+  //     })
+  //     .then(function(html) {
+  //       var newDocument = new DOMParser().parseFromString(html, 'text/html');
+  //       var newContent = newDocument.querySelector('.container__custom-product-grid').innerHTML;
+
+  //       document.querySelector('.container__custom-product-grid').innerHTML = newContent;
+  //     });
+  //   });
+  // });
+
+  // // Update sort_by query parameter on select change
+  // document.querySelector('#sort-by').addEventListener('change', function(e) {
+  //   var value = e.target.value;
+
+  //   Shopify.queryParams.sort_by = value;
+  //   location.search = new URLSearchParams(Shopify.queryParams).toString();
+  // });
 
   filterMobileBtn.addEventListener('click', function() {
     fiterForm.classList.toggle('visible')
