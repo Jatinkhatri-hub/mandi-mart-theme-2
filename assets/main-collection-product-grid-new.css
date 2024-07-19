@@ -223,7 +223,10 @@
   fill: #fff;
 }
 
-.paginate-deactive
+.paginate-deactive  {
+  background-color: #fff;
+  
+}
 
 .pagination__item--current {
   background-color: #074542;
