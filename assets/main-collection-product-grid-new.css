@@ -205,8 +205,7 @@
 
   .collection__custom-filter {
     align-items: center;
-    padding: 2rem;
-    tex
+    padding-inline: 2rem;
   }
 
   .collection__custom-sort-by {
