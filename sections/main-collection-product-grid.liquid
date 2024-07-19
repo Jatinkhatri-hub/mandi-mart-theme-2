@@ -209,13 +209,13 @@
                 </p>
               {%- endif -%}
             {%- else -%}
-              {%- for filter_value in filter.active_values -%}
-                {% comment %} <p>
+              {% comment %} {%- for filter_value in filter.active_values -%}
+                <p>
                   <a href="{{ filter_value.url_to_remove }}">
                     {{ filter.label }}: {{ filter_value.label }} X
                   </a>
-                </p> {% endcomment %}
-              {%- endfor -%}
+                </p>
+              {%- endfor -%} {% endcomment %}
             {%- endif -%}
           {%- endfor -%}
         </div>
