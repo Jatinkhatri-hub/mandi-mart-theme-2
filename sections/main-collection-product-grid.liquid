@@ -225,7 +225,7 @@
     </div>
   {% endif %}
 
-  {}
+  {%  paginate collection.products by 16 %}  
   <div class="product-grid collection__filter">
     {% for product in collection.products %}
       {% render 'product-card-new'
@@ -234,6 +234,7 @@
     {% endfor %}
 
   </div>
+  {% endpaginate %}
 </div>
 
 <script>
