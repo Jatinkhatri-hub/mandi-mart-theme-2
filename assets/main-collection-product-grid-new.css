@@ -4,6 +4,10 @@
   gap: 2rem;
 }
 
+.collection__mobile-filter {
+  
+}
+
 .collection__custom-filter {
   display: flex;
   flex-direction: column;
