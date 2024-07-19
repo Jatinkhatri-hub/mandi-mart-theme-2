@@ -286,11 +286,7 @@
     }
   }
 
-  filterMobileBtn.addEventListener('click', function() {
-    fiterForm.classList.toggle('visible')
-    filterMobileBtn.classList.toggle('open')
-    console.log('filter btn clicked')
-  });
+  
 
 
   document.querySelectorAll('.hidden-radio-button').forEach(function(radioButton) {
@@ -324,6 +320,12 @@
 
     Shopify.queryParams.sort_by = value;
     location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+
+  filterMobileBtn.addEventListener('click', function() {
+    fiterForm.classList.toggle('visible')
+    filterMobileBtn.classList.toggle('open')
+    console.log('filter btn clicked')
   });
 </script>
 
