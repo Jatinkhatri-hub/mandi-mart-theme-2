@@ -14,9 +14,9 @@
   gap: 2rem;
 }
 
-.collection__mobile-filter {
+/* .collection__mobile-filter {
   display: none;
-}
+} */
 
 .collection__custom-filter {
   display: flex;
