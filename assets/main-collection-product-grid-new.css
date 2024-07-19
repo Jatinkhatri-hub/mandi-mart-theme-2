@@ -200,7 +200,9 @@
     border-radius: .5rem;
   }
 
-  .co
+  .filter-collection__page-width {
+    padding: 0 1.5rem;
+  }
 
   .collection__mobile-filter {
     font-size: 2rem;
