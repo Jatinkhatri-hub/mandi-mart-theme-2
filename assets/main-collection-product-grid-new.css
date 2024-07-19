@@ -229,7 +229,7 @@
 }
 
 .paginate-deactive svg path {
-  border-color: #3AAF;
+  fill: ;
 }
 
 .pagination__item--current {
