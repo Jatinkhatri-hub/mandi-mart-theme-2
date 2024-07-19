@@ -214,7 +214,8 @@
 
   .collection__custom-sort-by {
     align-items: center;
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-bottom: 2rem;
   }
 
   .custom-select {
