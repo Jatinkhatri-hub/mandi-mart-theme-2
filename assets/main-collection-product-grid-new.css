@@ -228,9 +228,13 @@
 
   .collection__reset-filter-btn {
     justify-content: center;
+    padding: 2rem;
   }
 
-  .collection__re
+  .collection__reset-filter-text {
+    width: 100%;
+
+  }
   
 }
 
