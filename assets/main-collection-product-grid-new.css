@@ -211,7 +211,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  Co
+  color: #e4e4e4;
 }
 
 .pagination__item--current {
