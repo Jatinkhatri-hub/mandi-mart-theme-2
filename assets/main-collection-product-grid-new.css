@@ -185,7 +185,7 @@
     font-size: 2rem;
     color: #074542;
     display: flex;
-    padding: 1rem;
+    margin: 2rem;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
