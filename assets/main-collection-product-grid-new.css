@@ -208,9 +208,7 @@
     padding-inline: 2rem;
   }
 
-  .collection__filter-label {
-    text-align: left;
-  }
+  
 
   .collection__custom-sort-by {
     align-items: center;
