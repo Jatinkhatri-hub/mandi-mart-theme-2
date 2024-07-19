@@ -220,8 +220,10 @@
 }
 
 .paginate-active svg path {
-  fill: #fff
+  fill: #fff;
 }
+
+
 
 .pagination__item--current {
   background-color: #074542;
