@@ -279,7 +279,7 @@
   }
 
   .custom-filters-form.visible {
-    display: flex;
+    display: none;
   }
 
   .collection__custom-filter {
