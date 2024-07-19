@@ -278,8 +278,8 @@
     display: none;
   }
 
-  .custom-filters-form.visible {
-    display: none;
+  .visible {
+    display: flex;
   }
 
   .collection__custom-filter {
