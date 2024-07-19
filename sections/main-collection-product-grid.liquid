@@ -240,7 +240,7 @@
             <a 
             {% if paginate.previous %}
             href="{{ paginate.previous.url }}"
-            
+            {}
             class="pagination__item">{% render 'icon-arrow-left' %}</a>
           {% endif %}
           {% for part in paginate.parts %}
