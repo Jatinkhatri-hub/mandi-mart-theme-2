@@ -237,7 +237,7 @@
   <div class="collection__pagination">
     {% if paginate.pages > 1 %}
       <nav class="pagination__nav">
-        {}
+      {% if paginate.previous %} {% endif %}
 
       </nav>
     {% endif %}
