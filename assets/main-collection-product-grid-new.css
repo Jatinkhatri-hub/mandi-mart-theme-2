@@ -203,6 +203,11 @@
   gap: 2rem;
 }
 
+.pagination__item {
+  width: 40px;
+  height: ;
+}
+
 @media screen and (max-width: 896px) {
 
   .custom-filters {
