@@ -215,21 +215,21 @@
   .collection__custom-sort-by {
     align-items: center;
     padding-inline: 2rem;
-    padding-bottom: 2rem;
   }
-
+  
   .custom-select {
     width: 100%;
   }
-
+  
   .custom-select select {
     width: 100%;
   }
-
-
+  
+  
   .collection__reset-filter-btn {
     justify-content: center;
     padding-inline: 2rem;
+    padding-bottom: 2rem;
   }
 
   .collection__reset-filter-text {
