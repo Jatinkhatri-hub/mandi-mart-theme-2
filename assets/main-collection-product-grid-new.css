@@ -215,6 +215,8 @@
   text-decoration: none;
 }
 
+.paginate
+
 .pagination__item--current {
   background-color: #074542;
   border-color: #074542;
