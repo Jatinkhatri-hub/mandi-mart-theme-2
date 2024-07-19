@@ -205,12 +205,14 @@
 
   .collection__custom-filter {
     align-items: center;
+    padding: 2rem;
+    tex
   }
 
   .collection__custom-sort-by {
     align-items: center;
   }
-  
+
 
   .collection__reset-filter-btn {
     justify-content: center;
