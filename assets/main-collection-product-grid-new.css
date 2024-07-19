@@ -193,7 +193,14 @@
   margin: auto;
 }
 
-.collection
+.collection__pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination__nav {
+  di
+}
 
 @media screen and (max-width: 896px) {
 
