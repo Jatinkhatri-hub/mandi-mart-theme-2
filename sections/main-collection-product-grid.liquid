@@ -19,20 +19,20 @@
                   <span>{{ filter.label }}</span>
                   {% render 'icon-arrow-down' %}
                 {% comment %} {%- if filter.active_values.size > 0 -%}
-                                    <span>({{ filter.active_values.size }})</span>
-                                {%- endif -%} {% endcomment %}
+                                                      <span>({{ filter.active_values.size }})</span>
+                                                {%- endif -%} {% endcomment %}
                 </div>
               </summary>
 
               <div class="collection__filter-dropdown">
                 {% comment %} <div>
-                  <p>{{ filter.active_values.size }} selected</p>
-                  {%- if filter.active_values.size > 0 -%}
-                    <p>
-                      <a href="{{ filter.url_to_remove }}">Reset</a>
-                    </p>
-                  {%- endif -%}
-                </div> {% endcomment %}
+                                    <p>{{ filter.active_values.size }} selected</p>
+                                    {%- if filter.active_values.size > 0 -%}
+                                      <p>
+                                        <a href="{{ filter.url_to_remove }}">Reset</a>
+                                      </p>
+                                    {%- endif -%}
+                                </div> {% endcomment %}
                 {%- case filter.type -%}
                   {%- when 'boolean' -%}
                     <ul>
@@ -47,8 +47,7 @@
                             checked{%- endif %}
                             {% if filter.true_value.count == 0 and filter.true_value.active == false -%}
                             disabled{%- endif -%}
-                            class="hidden-radio-button"
-                            >{{ filter.true_value.label }}</label>
+                            class="hidden-radio-button">{{ filter.true_value.label }}</label>
                       </li>
                       <li class="li__remove-default-style">
                         <label for="Filter-{{ filter.param_name }}-{{ filter.false_value.value }}">
@@ -65,9 +64,9 @@
                       </li>
                     </ul>
 
-                    {% comment %} <div>
-                      <input type="submit" value="Apply">
-                    </div> {% endcomment %}
+                  {% comment %} <div>
+                                          <input type="submit" value="Apply">
+                                      </div> {% endcomment %}
                   {%- when 'list' -%}
                     <ul>
                       {%- for filter_value in filter.values -%}
@@ -125,9 +124,9 @@
                       {%- endfor -%}
                     </ul>
 
-                    {% comment %} <div>
-                      <input type="submit" value="Apply">
-                    </div> {% endcomment %}
+                  {% comment %} <div>
+                                          <input type="submit" value="Apply">
+                                      </div> {% endcomment %}
                   {%- when 'price_range' -%}
                     <div class="filter-group-display__price-range">
                       <div class="filter-group-display__price-range-from">
@@ -164,9 +163,9 @@
                       </div>
                     </div>
 
-                    {% comment %} <div class="filter-group-display__submit">
-                      <input type="submit" value="Apply">
-                    </div> {% endcomment %}
+                {% comment %} <div class="filter-group-display__submit">
+                                        <input type="submit" value="Apply">
+                                    </div> {% endcomment %}
                 {%- endcase -%}
               </div>
             </details>
@@ -174,22 +173,22 @@
         {%- endfor -%}
         <div class="collection__custom-sort-by">
           <span class="collection__filter-label">Sort by:</span>
-        <div class="custom-select">  
-        <select id="sort-by">
-          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+          <div class="custom-select">
+            <select id="sort-by">
+              {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-          {% for option in collection.sort_options %}
-            <option
-              value="{{ option.value }}"
-              {% if option.value == sort_by %}
-              selected="selected"
-              {% endif %}>
-              {{ option.name }}
-            </option>
-          {% endfor %}
-        </select>
-        {% render 'icon-arrow-down' %}
-        </div>
+              {% for option in collection.sort_options %}
+                <option
+                  value="{{ option.value }}"
+                  {% if option.value == sort_by %}
+                  selected="selected"
+                  {% endif %}>
+                  {{ option.name }}
+                </option>
+              {% endfor %}
+            </select>
+            {% render 'icon-arrow-down' %}
+          </div>
         </div>
 
         <div class="collection__reset-filter-btn">
@@ -225,25 +224,34 @@
     </div>
   {% endif %}
 
-  {%  paginate collection.products by 16 %}  
-  <div class="product-grid collection__filter">
-    {% for product in collection.products %}
-      {% render 'product-card-new'
-        , product: product
-      %}
-    {% endfor %}
-  </div>
+  {% paginate collection.products by 16 %}
+    <div class="product-grid collection__filter">
+      {% for product in collection.products %}
+        {% render 'product-card-new'
+          , product: product
+        %}
+      {% endfor %}
+    </div>
 
-  <div class="collection__pagination">
-    {% if paginate.pages > 1 %}
-      <nav class="pagination__nav">
-      {% if paginate.previous %} 
-        <a href="{{ paginate.previous.url }}" class="pagination__item">Previous</a>
+    <div class="collection__pagination">
+      {% if paginate.pages > 1 %}
+        <nav class="pagination__nav">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="pagination__item">Previous</a>
+          {% endif %}
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <a href="{{ part.url }}" class="pagination__item">{{ part.title }}</a>
+            {% else %}
+              <span class="pagination__item pagination__item--current">{{ part.title }}</span>
+            {% endif %}
+          {% endfor %}
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="pagination__item">Next</a>
+          {% endif %}
+        </nav>
       {% endif %}
-
-      </nav>
-    {% endif %}
-  </div>
+    </div>
   {% endpaginate %}
 </div>
 
