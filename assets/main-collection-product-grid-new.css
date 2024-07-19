@@ -275,6 +275,7 @@
 
   .custom-filters-form {
     flex-direction: column;
+    display: none;
   }
 
   .visible {
