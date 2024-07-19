@@ -193,7 +193,9 @@
   margin: auto;
 }
 
-.pag
+.pagination__nav {
+  margin: 0 auto;
+}
 
 @media screen and (max-width: 896px) {
 
