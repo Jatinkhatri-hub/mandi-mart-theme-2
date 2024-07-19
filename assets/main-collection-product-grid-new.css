@@ -2,7 +2,10 @@
   margin-bottom: 5rem;
 }
 
-.filter-collection
+.filter-collection__page-width {
+  max-width: 130rem;
+  mar
+}
 
 .custom-filters-form {
   display: flex;
