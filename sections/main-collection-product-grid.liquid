@@ -235,7 +235,12 @@
   </div>
 
   <div class="collection__pagination">
-    
+    {% if paginate.pages > 1 %}
+      <nav class="pagination__nav">
+        {}
+
+      </nav>
+    {% endif %}
   </div>
   {% endpaginate %}
 </div>
