@@ -211,11 +211,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  Co
 }
 
 .pagination__item--current {
   background-color: #074542;
   border-color: #074542;
+  color: #fff;
 }
 
 @media screen and (max-width: 896px) {
