@@ -236,10 +236,12 @@
     <div class="collection__pagination">
       {% if paginate.pages > 1 %}
         <nav class="pagination__nav">
-          {% if paginate.previous %}
+          
             <a 
+            {% if paginate.previous %}
+            href="{{ paginate.previous.url }}"
             
-            href="{{ paginate.previous.url }}" class="pagination__item">{% render 'icon-arrow-left' %}</a>
+            class="pagination__item">{% render 'icon-arrow-left' %}</a>
           {% endif %}
           {% for part in paginate.parts %}
             {% if part.is_link %}
