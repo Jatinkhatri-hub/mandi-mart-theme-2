@@ -4,7 +4,8 @@
 
 .filter-collection__page-width {
   max-width: 130rem;
-  mar
+  margin: 0 auto;
+  
 }
 
 .custom-filters-form {
