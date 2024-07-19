@@ -214,11 +214,11 @@
 
   .collection__custom-sort-by {
     align-items: center;
+    padding: 2rem;
   }
 
   .custom-select {
     width: 100%;
-    padding: 1
   }
 
   .custom-select select {
