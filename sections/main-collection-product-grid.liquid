@@ -9,7 +9,7 @@
         <span>Filters</span>
         {% render 'icon-arrow-down' %}
       </div>
-      <form class="custom-filters-form visible">
+      <form class="custom-filters-form">
         {%- for filter in collection.filters -%}
           <div class="collection__custom-filter">
             <span class="collection__filter-label">{{ filter.label }}:</span>
