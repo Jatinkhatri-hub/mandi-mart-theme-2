@@ -356,6 +356,13 @@
   filterMobileBtn.classList.toggle('open');
   console.log('filter btn clicked');
   });
+
+  const checkEventListener = (element, eventType) => {
+  const eventListeners = getEventListeners(element);
+  return eventListeners[eventType] && eventListeners[eventType].length > 0;
+};
+
+console.log('Filter button has click event:', checkEventListener(filterMobileBtn, 'click'));
   // const fiterForm = document.querySelector('.custom-filters-form');
   // const filterMobileBtn = document.querySelector('.collection__mobile-filter');
 
