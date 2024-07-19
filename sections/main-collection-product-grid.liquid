@@ -255,7 +255,7 @@
             <a {% if paginate.next %}
               href="{{ paginate.previous.url }}"
               {% endif %}
-              class="pagination__item {% if paginate.previous %} paginate-active 
+              class="pagination__item {% if paginate.next %} paginate-active 
               {%  else %} paginate-deactive {% endif %}">{% render 'icon-arrow-right' %}</a>
           {% endif %}
         </nav>
