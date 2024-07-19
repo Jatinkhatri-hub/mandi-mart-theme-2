@@ -275,11 +275,10 @@
 
   .custom-filters-form {
     flex-direction: column;
-    display: none;
   }
 
   .visible {
-    display: flex;
+    display: none;
   }
 
   .collection__custom-filter {
