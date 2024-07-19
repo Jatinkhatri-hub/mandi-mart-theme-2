@@ -238,7 +238,7 @@
     {% if paginate.pages > 1 %}
       <nav class="pagination__nav">
       {% if paginate.previous %} 
-        <a href="{{ pa }}"></a>
+        <a href="{{ paginate.previous.url }}"></a>
       {% endif %}
 
       </nav>
