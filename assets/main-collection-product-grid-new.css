@@ -228,7 +228,9 @@
   border-color: #3AAFA9
 }
 
-.pa
+.paginate-deactive svg path {
+  border
+}
 
 .pagination__item--current {
   background-color: #074542;
