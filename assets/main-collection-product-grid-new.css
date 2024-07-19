@@ -206,7 +206,9 @@
     flex-direction: column;
   }
 
-  .visible
+  .visible {
+    display: none !important;
+  }
 
   .collection__custom-filter {
     align-items: center;
