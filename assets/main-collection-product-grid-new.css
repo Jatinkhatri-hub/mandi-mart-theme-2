@@ -215,7 +215,9 @@
   text-decoration: none;
 }
 
-.paginate
+.paginate-active {
+  background-color: ;
+}
 
 .pagination__item--current {
   background-color: #074542;
