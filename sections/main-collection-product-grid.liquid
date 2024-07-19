@@ -19,20 +19,20 @@
                   <span>{{ filter.label }}</span>
                   {% render 'icon-arrow-down' %}
                 {% comment %} {%- if filter.active_values.size > 0 -%}
-                                                                        <span>({{ filter.active_values.size }})</span>
-                                                                {%- endif -%} {% endcomment %}
+                                                                                          <span>({{ filter.active_values.size }})</span>
+                                                                                {%- endif -%} {% endcomment %}
                 </div>
               </summary>
 
               <div class="collection__filter-dropdown">
                 {% comment %} <div>
-                                                      <p>{{ filter.active_values.size }} selected</p>
-                                                      {%- if filter.active_values.size > 0 -%}
-                                                        <p>
-                                                          <a href="{{ filter.url_to_remove }}">Reset</a>
-                                                        </p>
-                                                      {%- endif -%}
-                                                </div> {% endcomment %}
+                                                                        <p>{{ filter.active_values.size }} selected</p>
+                                                                        {%- if filter.active_values.size > 0 -%}
+                                                                          <p>
+                                                                            <a href="{{ filter.url_to_remove }}">Reset</a>
+                                                                          </p>
+                                                                        {%- endif -%}
+                                                                </div> {% endcomment %}
                 {%- case filter.type -%}
                   {%- when 'boolean' -%}
                     <ul>
@@ -65,8 +65,8 @@
                     </ul>
 
                   {% comment %} <div>
-                                                              <input type="submit" value="Apply">
-                                                        </div> {% endcomment %}
+                                                                                  <input type="submit" value="Apply">
+                                                                          </div> {% endcomment %}
                   {%- when 'list' -%}
                     <ul>
                       {%- for filter_value in filter.values -%}
@@ -125,8 +125,8 @@
                     </ul>
 
                   {% comment %} <div>
-                                                              <input type="submit" value="Apply">
-                                                        </div> {% endcomment %}
+                                                                                  <input type="submit" value="Apply">
+                                                                          </div> {% endcomment %}
                   {%- when 'price_range' -%}
                     <div class="filter-group-display__price-range">
                       <div class="filter-group-display__price-range-from">
@@ -164,8 +164,8 @@
                     </div>
 
                 {% comment %} <div class="filter-group-display__submit">
-                                                          <input type="submit" value="Apply">
-                                                    </div> {% endcomment %}
+                                                                            <input type="submit" value="Apply">
+                                                                    </div> {% endcomment %}
                 {%- endcase -%}
               </div>
             </details>
@@ -243,7 +243,7 @@
             {% endif %}
             class="pagination__item {% if paginate.previous %} paginate-active 
             {%  else %} paginate-deactive {% endif %}">
-{% render 'icon-arrow-left' %}</a>
+            {% render 'icon-arrow-left' %}</a>
 
           {% for part in paginate.parts %}
             {% if part.is_link %}
@@ -258,7 +258,8 @@
             href="{{ paginate.next.url }}"
             {% endif %}
             class="pagination__item {% if paginate.next %} paginate-active 
-              {%  else %} paginate-deactive {% endif %}">{% render 'icon-arrow-right' %}</a>
+              {%  else %} paginate-deactive {% endif %}">
+{% render 'icon-arrow-right' %}</a>
 
         </nav>
       {% endif %}
