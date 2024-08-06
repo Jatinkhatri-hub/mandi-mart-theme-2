@@ -42,7 +42,7 @@
     border: 0.125rem black solid; /* 2px / 16 */
 }
 .brand-content img {
-    height: 2.8rem; /* 45px / 16 */
+    height: 45px; /* 45px / 16 */
     width: fit-content;
     max-height: 80%; /* Adjust image height as needed */
     max-width: 100%; 
