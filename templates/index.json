@@ -50,7 +50,6 @@
     },
     "featured_collection": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -76,73 +75,10 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "section_review_L68NXr": {
-      "type": "section-review",
-      "blocks": {
-        "review_carousle_WteRaJ": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name N.",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        },
-        "review_carousle_xceFRQ": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        },
-        "review_carousle_dXy8Hh": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        },
-        "review_carousle_HUMq6j": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        },
-        "review_carousle_BCTt6w": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        },
-        "review_carousle_yKaG39": {
-          "type": "review_carousle",
-          "settings": {
-            "user_name": "Name",
-            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
-          }
-        }
-      },
-      "block_order": [
-        "review_carousle_WteRaJ",
-        "review_carousle_xceFRQ",
-        "review_carousle_dXy8Hh",
-        "review_carousle_HUMq6j",
-        "review_carousle_BCTt6w",
-        "review_carousle_yKaG39"
-      ],
-      "settings": {
-        "heading": "<p>TrustPilot Reviews<\/p>",
-        "section_color_scheme": "scheme-f1dcb4e3-184d-4522-88fb-36e0bf35f161",
-        "color_scheme": "scheme-f1dcb4e3-184d-4522-88fb-36e0bf35f161",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection",
-    "section_review_L68NXr"
+    "featured_collection"
   ]
 }
