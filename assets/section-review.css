@@ -92,7 +92,7 @@
     border-radius: 0;
   }
 
-  .review__section-header {
+  .review__section-header p {
     text-align: center;
     font-size: 3.5rem;
   }
