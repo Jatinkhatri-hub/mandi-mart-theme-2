@@ -11,13 +11,109 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "brand_directory_KRNKjC": {
+      "type": "brand-directory",
+      "blocks": {
+        "brand_XHj44b": {
+          "type": "brand",
+          "settings": {
+            "collection": "algonot"
+          }
+        },
+        "brand_C7RM9m": {
+          "type": "brand",
+          "settings": {
+            "collection": "anrc-protocol"
+          }
+        },
+        "brand_hEmAM4": {
+          "type": "brand",
+          "settings": {
+            "collection": "custom-probiotics"
+          }
+        },
+        "brand_peAGnB": {
+          "type": "brand",
+          "settings": {
+            "collection": "biom"
+          }
+        },
+        "brand_mgW3FM": {
+          "type": "brand",
+          "settings": {
+            "collection": "lee-silsby-enhansa"
+          }
+        },
+        "brand_w6A3FE": {
+          "type": "brand",
+          "settings": {
+            "collection": "meraki-medicinal"
+          }
+        },
+        "brand_fFYybm": {
+          "type": "brand",
+          "settings": {
+            "collection": "metabolics"
+          }
+        },
+        "brand_V43AQY": {
+          "type": "brand",
+          "settings": {
+            "collection": "new-beginnings"
+          }
+        },
+        "brand_BRY9EE": {
+          "type": "brand",
+          "settings": {
+            "collection": "ramp-health"
+          }
+        },
+        "brand_eAW8Qr": {
+          "type": "brand",
+          "settings": {
+            "collection": "simple-spectrum"
+          }
+        },
+        "brand_xATTGM": {
+          "type": "brand",
+          "settings": {
+            "collection": "spectrum-awakening"
+          }
+        },
+        "brand_XrJRwd": {
+          "type": "brand",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_XHj44b",
+        "brand_C7RM9m",
+        "brand_hEmAM4",
+        "brand_peAGnB",
+        "brand_mgW3FM",
+        "brand_w6A3FE",
+        "brand_fFYybm",
+        "brand_V43AQY",
+        "brand_BRY9EE",
+        "brand_eAW8Qr",
+        "brand_xATTGM",
+        "brand_XrJRwd"
+      ],
+      "settings": {
+        "background_color": "#ffffff"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "brand_directory_KRNKjC"
   ]
 }
