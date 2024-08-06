@@ -10,3 +10,6 @@
   align-items: center;
 }
 
+.review__list-wrapper {
+  display: flex;
+}
