@@ -30,7 +30,7 @@
   gap: 22px;
   background: white;
   width: 380px;
-  height: 
+  height: 260px;
 }
 
 .review__card-header {
@@ -50,6 +50,7 @@
 .review__user-name {
   font-size: 1.9rem;
   color: black;
+  margin: 0;
 }
 
 .review__verified-badge {
