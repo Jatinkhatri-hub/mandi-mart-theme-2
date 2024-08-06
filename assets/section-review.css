@@ -47,4 +47,6 @@
   font-size: 1.9rem;
 }
 
-.review__verified
+.review__verified-badge {
+  font-size: 15px;
+}
