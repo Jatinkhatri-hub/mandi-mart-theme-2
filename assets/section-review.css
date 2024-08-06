@@ -47,6 +47,7 @@
 
 .review__user-name {
   font-size: 1.9rem;
+  color: black;
 }
 
 .review__verified-badge {
@@ -70,4 +71,5 @@
 .review__description {
   font-size: 15px;
   text-align: start;
+  color: black;
 }
