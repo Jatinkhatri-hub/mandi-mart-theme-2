@@ -24,21 +24,21 @@
         "link_list_zyzW3r": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "<strong>Account<\/strong>",
             "menu": "footer-menu-new"
           }
         },
         "link_list_LmwKw8": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "<strong>News<\/strong>",
             "menu": "footer"
           }
         },
         "link_list_dmizCt": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "<strong>Information<\/strong>",
             "menu": "information"
           }
         },
