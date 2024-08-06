@@ -113,6 +113,7 @@
     },
     "bd_explore_MFUcAG": {
       "type": "BD-explore",
+      "disabled": true,
       "settings": {
         "background_color": "#ffffff",
         "image_1": "shopify:\/\/shop_images\/Group_1484579915.png",
