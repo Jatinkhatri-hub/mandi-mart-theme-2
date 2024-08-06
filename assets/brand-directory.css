@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 .brand-directory-content {
-    margin: 0rem 9.225rem; /* 147.6px / 16 */
-    padding: 1rem 2rem; /* 25px / 16 and 35px / 16 */
+    margin: 0rem 9.225rem;
+    padding: 1rem 2rem; 
 }
 .brand-directory-heading {
     font-size: 4.8rem;
