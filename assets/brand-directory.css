@@ -52,7 +52,7 @@
     font-size: 2.5rem;
     text-align: center;
     color: black;
-    font-weight: calc(20rem); /* This value is abnormally large and might need adjustment */
+    font-weight: 400; /* This value is abnormally large and might need adjustment */
 }
 /* MEDIA QUERIES... */
 
