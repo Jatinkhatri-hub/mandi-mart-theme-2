@@ -65,3 +65,7 @@
   fill: #3aafa9;
 }
 
+.review__description {
+  display: flex;
+  justify-content: ;
+}
