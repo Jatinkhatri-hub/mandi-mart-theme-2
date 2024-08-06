@@ -28,6 +28,7 @@
   align-items: baseline;
   padding: 3.5rem;
   gap: 22px;
+  background: white;
 }
 
 .review__card-header {
