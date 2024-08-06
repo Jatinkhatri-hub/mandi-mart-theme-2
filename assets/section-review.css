@@ -31,5 +31,6 @@
 
 .review__card-header {
   display: flex;
+  flex-direction: row;
   
 }
