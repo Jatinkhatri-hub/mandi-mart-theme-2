@@ -88,6 +88,7 @@
 
 @media screen and (max-width: 789px){
   .review__container {
-    overflow: auto;
+    overflow: visible;
+    border-radius: 0;
   }
 }
