@@ -61,4 +61,6 @@
   height: 13px;
 }
 
-.review__verified-badge s
+.review__verified-badge svg path {
+  fill: #3aafa9;
+}
