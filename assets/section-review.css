@@ -56,9 +56,9 @@
   align-items: center;
 }
 
-.review__verified-badge {
+.review__verified-badge svg {
   width: 13px;
   height: 13px;
 }
 
-.re
+.review__verified-badge s
