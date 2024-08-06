@@ -1,0 +1,61 @@
+{{ 'brand-directory.css' |  asset_url |  stylesheet_tag }}
+
+<div class="brand-directory" style="background-color: {{ section.settings.background_color }}">
+    <div class="brand-directory-content">
+        <h3 class="brand-directory-heading">All Brands</h3>
+        <div class="brand-directory-container">
+            {% for block in section.blocks %}
+            <a href="{{ block.settings.brand_link }}" class="brand-item">
+                <div class="brand-content">
+                    <img src="{{ block.settings.brand_image | img_url: '720x' }}" alt="{{ block.settings.brand_text }}">
+                    <p>{{ block.settings.brand_text }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "brand-directory",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#ffffff"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "brand",
+            "name": "Brand",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "brand_image",
+                    "label": "Brand Image"
+                },
+                {
+                    "type": "text",
+                    "id": "brand_text",
+                    "label": "Brand Text"
+                },
+                {
+                    "type": "url",
+                    "id": "brand_link",
+                    "label": "Brand Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "brand-directory",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
