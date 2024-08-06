@@ -4,8 +4,9 @@
   overflow: hidden;
 }
 
-.review__cr{
-
+.review__carousel-wrapper{
+  padding: 2rem;
+  position: relative;
 }
 
 .review__section-header-wrapper{
@@ -82,4 +83,9 @@
   text-align: start;
   color: black;
   margin: 0;
+}
+
+
+@media screen and (max-width: ){
+  
 }
