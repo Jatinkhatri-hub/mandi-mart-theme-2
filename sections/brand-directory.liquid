@@ -5,7 +5,7 @@
         <h3 class="brand-directory-heading">All Brands</h3>
         <div class="brand-directory-container">
             {% for block in section.blocks %}
-            <a href="{{ block.settings.brand_link }}" class="brand-item">
+            <a href="{{ block.settings.collection.url }}" class="brand-item">
                 <div class="brand-content">
                     <img src="{{ block.settings.brand_image | img_url: '720x' }}" alt="{{ block.settings.brand_text }}">
                     <p>{{ block.settings.brand_text }}</p>
