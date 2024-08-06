@@ -26,13 +26,13 @@
 @media(min-width : 319px) and (max-width : 480px){
     .BD-explore-container {
         flex-direction: column;
-        height: ; /* Allow the height to adjust based on content */
+     /* Allow the height to adjust based on content */
         margin: 0.5rem; /* Adjust margins for smaller screens */
     }
     .BD-container {
         margin-bottom: 0.6rem;
-        height: 308px;
-        width: 287px;
+        height: 250px;
+        width: 300px;
     }
     .BD-container:last-child {
         margin-bottom: 0;
