@@ -1,0 +1,67 @@
+ {{ 'BD-explore.css' |  asset_url |  stylesheet_tag}} 
+<div class="BD-explore" style="background-color: {{ section.settings.background_color }};">
+    <div class="BD-explore-container">
+        {% for i in (1..3) %}
+            {% capture img_key %}image_{{ i }}{% endcapture %}
+            {% capture link_key %}link_{{ i }}{% endcapture %}
+            {% assign img = section.settings[img_key] %}
+            {% assign link = section.settings[link_key] %}
+            <div class="BD-container">
+                <a href="{{ link }}" target="_blank">
+                    <img src="{{ img | img_url: 'large' }}" alt="Brand Image">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "BD-explore",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Image 1"
+        },
+        {
+            "type": "url",
+            "id": "link_1",
+            "label": "Link 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Image 2"
+        },
+        {
+            "type": "url",
+            "id": "link_2",
+            "label": "Link 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Image 3"
+        },
+        {
+            "type": "url",
+            "id": "link_3",
+            "label": "Link 3"
+        }
+    ],
+    "presets": [
+        {
+            "name": "BD-explore",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
