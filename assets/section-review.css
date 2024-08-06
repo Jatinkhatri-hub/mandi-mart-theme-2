@@ -38,6 +38,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  width: 100%;
 }
 
 .review__user-wrapper {
@@ -75,4 +76,5 @@
   font-size: 15px;
   text-align: start;
   color: black;
+  margin: 0;
 }
