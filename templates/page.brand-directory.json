@@ -110,10 +110,23 @@
       "settings": {
         "background_color": "#ffffff"
       }
+    },
+    "bd_explore_MFUcAG": {
+      "type": "BD-explore",
+      "settings": {
+        "background_color": "#ffffff",
+        "image_1": "shopify:\/\/shop_images\/Group_1484579915.png",
+        "link_1": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Group_1000007078_2.png",
+        "link_2": "shopify:\/\/collections\/clearance",
+        "image_3": "shopify:\/\/shop_images\/Group_1000007081_5.png",
+        "link_3": ""
+      }
     }
   },
   "order": [
     "main",
-    "brand_directory_KRNKjC"
+    "brand_directory_KRNKjC",
+    "bd_explore_MFUcAG"
   ]
 }
