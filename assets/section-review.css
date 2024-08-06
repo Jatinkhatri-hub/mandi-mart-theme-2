@@ -29,4 +29,7 @@
   padding: 3.5rem;
 }
 
-.review_-card
+.review__card-header {
+  display: flex;
+  
+}
