@@ -26,5 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-  padding: 3.5px;
+  padding: 3.5rem;
 }
+
+.review_-card
