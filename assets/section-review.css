@@ -56,4 +56,9 @@
   align-items: center;
 }
 
-.review__verified-badge 
+.review__verified-badge {
+  width: 13px;
+  height: 13px;
+}
+
+.re
