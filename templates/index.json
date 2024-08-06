@@ -107,13 +107,29 @@
             "user_name": "Name",
             "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
           }
+        },
+        "review_carousle_BCTt6w": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_yKaG39": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
         }
       },
       "block_order": [
         "review_carousle_WteRaJ",
         "review_carousle_xceFRQ",
         "review_carousle_dXy8Hh",
-        "review_carousle_HUMq6j"
+        "review_carousle_HUMq6j",
+        "review_carousle_BCTt6w",
+        "review_carousle_yKaG39"
       ],
       "settings": {
         "heading": "<p>TrustPilot Reviews<\/p>",
