@@ -36,7 +36,7 @@
     background-color: #F3F7F7;
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     border-radius: 0.3rem; /* 5px / 16 */
-    padding: 1.25rem; /* 20px / 16 */
+     /* 20px / 16 */
 }
 .brand-content:hover {
     border: 0.125rem black solid; /* 2px / 16 */
