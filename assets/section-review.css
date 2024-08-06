@@ -49,5 +49,9 @@
 
 .review__verified-badge {
   font-size: 15px;
-  color: #3aa
+  color: #3aafa9;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  
 }
