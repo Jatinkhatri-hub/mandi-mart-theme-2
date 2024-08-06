@@ -75,8 +75,7 @@
 }
 .brand-content img{
     height: 24px;
-    width: 78px;
-    object-fit: cover;
+    object-fit: contain;
 }
 .brand-directory-container{
     gap: 10px;
