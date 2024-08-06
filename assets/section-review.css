@@ -13,6 +13,7 @@
 .review__section-header {
   font-size: 3.7rem;
   color: rgb(var(--color-foreground));
+  font-weight: 600;
 }
 
 .review__list-wrapper {
