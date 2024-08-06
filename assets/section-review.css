@@ -4,4 +4,8 @@
   overflow: hidden;
 }
 
-.review__section-header-wrapper
+.review__section-header-wrapper{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
