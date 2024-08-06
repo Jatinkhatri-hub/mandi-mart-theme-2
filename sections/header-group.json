@@ -48,8 +48,8 @@
       "settings": {
         "brand_logo": "shopify:\/\/shop_images\/image_15_1.png",
         "logo_width": 100,
-        "navigation": "main-menu",
-        "mega_navbar": "footer-menu-new",
+        "navigation": "main-menu-1",
+        "mega_navbar": "mega-menu",
         "color_scheme": "scheme-a49c98e2-bc41-4a36-940d-4e0f3f8f0b5b",
         "menu_color_scheme": "scheme-1"
       }
