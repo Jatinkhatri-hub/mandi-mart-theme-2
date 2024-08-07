@@ -25,7 +25,6 @@
     align-items: center;
     justify-items: center;
     gap: 2rem; /* 15px / 16 */
-
 }
 .brand-item {
     text-decoration: none; /* Removes underline from links */
