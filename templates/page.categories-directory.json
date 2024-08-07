@@ -19,7 +19,26 @@
     },
     "brand_directory_YQAbUg": {
       "type": "brand-directory",
+      "blocks": {
+        "brand_zGmFPR": {
+          "type": "brand",
+          "settings": {
+            "collection": "amino-acids"
+          }
+        },
+        "brand_kBtHR6": {
+          "type": "brand",
+          "settings": {
+            "collection": "anrc-protocol-1"
+          }
+        }
+      },
+      "block_order": [
+        "brand_zGmFPR",
+        "brand_kBtHR6"
+      ],
       "settings": {
+        "heading": "<p>EXPLORE CATEGORIES<\/p>",
         "section_color_scheme": "",
         "color_scheme": "",
         "padding_top": 36,
