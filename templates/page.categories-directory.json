@@ -31,11 +31,165 @@
           "settings": {
             "collection": "anrc-protocol-1"
           }
+        },
+        "brand_UViAYL": {
+          "type": "brand",
+          "settings": {
+            "collection": "b12"
+          }
+        },
+        "brand_NGAhkk": {
+          "type": "brand",
+          "settings": {
+            "collection": "books"
+          }
+        },
+        "brand_Q4cEMn": {
+          "type": "brand",
+          "settings": {
+            "collection": "clearance-1"
+          }
+        },
+        "brand_i8ye9d": {
+          "type": "brand",
+          "settings": {
+            "collection": "detoxification-support"
+          }
+        },
+        "brand_JgTLA8": {
+          "type": "brand",
+          "settings": {
+            "collection": "digestive-enzymes"
+          }
+        },
+        "brand_B8UwGF": {
+          "type": "brand",
+          "settings": {
+            "collection": "dmg-tmg"
+          }
+        },
+        "brand_t3aEEz": {
+          "type": "brand",
+          "settings": {
+            "collection": "efas-oils"
+          }
+        },
+        "brand_ic9TFg": {
+          "type": "brand",
+          "settings": {
+            "collection": "gut-support"
+          }
+        },
+        "brand_VyyVBR": {
+          "type": "brand",
+          "settings": {
+            "collection": "immune-support"
+          }
+        },
+        "brand_QkHGPW": {
+          "type": "brand",
+          "settings": {
+            "collection": "keto-kerri-protocol"
+          }
+        },
+        "brand_faHzhL": {
+          "type": "brand",
+          "settings": {
+            "collection": "lead-test-kits"
+          }
+        },
+        "brand_TTTF87": {
+          "type": "brand",
+          "settings": {
+            "collection": "living-network-ala-dmsa"
+          }
+        },
+        "brand_KYafaD": {
+          "type": "brand",
+          "settings": {
+            "collection": "live-support"
+          }
+        },
+        "brand_JQA4th": {
+          "type": "brand",
+          "settings": {
+            "collection": "minerals"
+          }
+        },
+        "brand_Mz8Xfp": {
+          "type": "brand",
+          "settings": {
+            "collection": "mito-support"
+          }
+        },
+        "brand_DJMx3D": {
+          "type": "brand",
+          "settings": {
+            "collection": "mutli-vitamins-for-asd"
+          }
+        },
+        "brand_mAgYMF": {
+          "type": "brand",
+          "settings": {
+            "collection": "mood-support"
+          }
+        },
+        "brand_Rr3kYi": {
+          "type": "brand",
+          "settings": {
+            "collection": "probiotics"
+          }
+        },
+        "brand_Ct3LT7": {
+          "type": "brand",
+          "settings": {
+            "collection": "speciality-products"
+          }
+        },
+        "brand_xPyFr3": {
+          "type": "brand",
+          "settings": {
+            "collection": "toiletries"
+          }
+        },
+        "brand_kPg4qH": {
+          "type": "brand",
+          "settings": {
+            "collection": "transdermal"
+          }
+        },
+        "brand_aYdLMe": {
+          "type": "brand",
+          "settings": {
+            "collection": "vitamins"
+          }
         }
       },
       "block_order": [
         "brand_zGmFPR",
-        "brand_kBtHR6"
+        "brand_kBtHR6",
+        "brand_UViAYL",
+        "brand_NGAhkk",
+        "brand_Q4cEMn",
+        "brand_i8ye9d",
+        "brand_JgTLA8",
+        "brand_B8UwGF",
+        "brand_t3aEEz",
+        "brand_ic9TFg",
+        "brand_VyyVBR",
+        "brand_QkHGPW",
+        "brand_faHzhL",
+        "brand_TTTF87",
+        "brand_KYafaD",
+        "brand_JQA4th",
+        "brand_Mz8Xfp",
+        "brand_DJMx3D",
+        "brand_mAgYMF",
+        "brand_Rr3kYi",
+        "brand_Ct3LT7",
+        "brand_xPyFr3",
+        "brand_kPg4qH",
+        "brand_aYdLMe"
       ],
       "settings": {
         "heading": "<p>EXPLORE CATEGORIES<\/p>",
