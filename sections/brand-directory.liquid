@@ -22,8 +22,9 @@
             {% for block in section.blocks %}
             <a href="{{ block.settings.collection.url }}" class="brand-item">
                 <div class="brand-content">
-                  
+                  {% if block.settings.collection.image.src != blank %}
                     <img src="{{ block.settings.collection.image.src | img_url: '720x' }}" alt="{{ block.settings.brand_text }}">
+                  {% endif %}
                     <p>{{ block.settings.collection.title }}</p>
                 </div>
             </a>
