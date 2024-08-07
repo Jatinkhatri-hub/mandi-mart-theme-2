@@ -198,10 +198,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "bd_explore_nnJ4nL": {
+      "type": "BD-explore",
+      "settings": {
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image_1": "shopify:\/\/shop_images\/Group_1484579915.png",
+        "link_1": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Group_1000007078_2.png",
+        "link_2": "shopify:\/\/collections\/clearance",
+        "image_3": "shopify:\/\/shop_images\/Group_1000007081_5.png",
+        "link_3": "shopify:\/\/collections\/new-products"
+      }
     }
   },
   "order": [
     "main",
-    "brand_directory_YQAbUg"
+    "brand_directory_YQAbUg",
+    "bd_explore_nnJ4nL"
   ]
 }
