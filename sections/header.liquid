@@ -79,7 +79,7 @@
               <div class="mega-menu__sub  nav-hidden">
               <ul>
                 {%  assign dropdownDividerMobile = 0 %}
-                 
+                {% assign dropdownDividerDesktop = 0 %} 
                 {% for child in link.links %}
                   {% assign child_collection_handle = child.url | remove: '/collections/' %}
                   {% assign child_collection = collections[child_collection_handle] %}
