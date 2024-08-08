@@ -106,7 +106,7 @@
                   {%  assign dropdownDividerMobile = dropdownDividerMobile |  plus: 1 %} 
                   {% assign dropdownDividerDesktop = dropdownDividerDesktop | plus: 1 %}
                   {% if dropdownDividerDesktop == 16 %} 
-                    <div class="dropdown"></div>
+                    <div class="dropdown-divider-desktop"></div>
                   {% endif %}
                   {% if dropdownDividerMobile == 4 or dropdownDividerMobile == 8 or dropdownDividerMobile == 12 or dropdownDividerMobile == 16 or dropdownDividerMobile == 20 or dropdownDividerMobile == 24 %}
                     <div class="dropdown-divider-mobile"></div>
@@ -538,7 +538,6 @@
       border: 1px solid #DADADA;
       left: -10px;
       position: relative;
-
     }
 
 
