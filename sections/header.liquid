@@ -103,8 +103,9 @@
                     {% endif %}
                   </li>
                   {%  assign dropdownDividerMobile = dropdownDividerMobile |  plus: 1 %} 
-                  
-                  <div class="dropdown-divider"></div>
+                  {% if dropdownDividerMobile == 4 or dropdownDividerMobile == 8 or dropdownDividerMobile == 16 or dropdownDividerMobile == 20 or dropdownDividerMobile == 24 %}
+                    <div class="dropdown-divider"></div>
+                  {% endif %}
                 {% endfor %}
                 
               </ul>
