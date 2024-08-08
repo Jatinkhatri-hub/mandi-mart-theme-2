@@ -78,6 +78,7 @@
             {% if link.links != blank %}
               <div class="mega-menu__sub  nav-hidden">
               <ul>
+                {%  assign d =  %} %}
                 {% for child in link.links %}
                   {% assign child_collection_handle = child.url | remove: '/collections/' %}
                   {% assign child_collection = collections[child_collection_handle] %}
