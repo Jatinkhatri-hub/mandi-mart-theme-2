@@ -664,58 +664,115 @@
     const subChildDropdown = document.querySelectorAll('.sub-child-dropdown');
     const dropdownItems = document.querySelectorAll('.mega-menu__sub-item');
 
-    dropdownItems.forEach(function(item) {
-      item.addEventListener('mouseenter', function() {
-        const collectionHandle = item.getAttribute('data-collection-handle');
-        const productPreview = item.querySelector('.product-preview');
-        console.log('active')
+    const productPreviewContainer = document.getElementById('product-preview-container');
 
-        //check if product are already featched
-        if (productPreview.innerHTML.trim() === '') {
-          fetchProducts(collectionHandle, productPreview);
-        }
+// Load initial products for the first collection
+const firstCollectionHandle = dropdownItems[0].getAttribute('data-collection-handle');
+fetchAndDisplayProducts(firstCollectionHandle, productPreviewContainer);
+
+dropdownItems.forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    const collectionHandle = item.getAttribute('data-collection-handle');
+    
+    // Fetch and display products for the hovered collection
+    fetchAndDisplayProducts(collectionHandle, productPreviewContainer);
+  });
+});
+
+function fetchAndDisplayProducts(collectionHandle, container) {
+  // Clear existing content
+  container.innerHTML = '';
+
+  fetch(`/collections/${collectionHandle}/products.json`)
+    .then(response => response.json())
+    .then(data => {
+      const products = data.products;
+      const randomProducts = getRandomProducts(products, 2);
+
+      randomProducts.forEach(product => {
+        const productElement = createProductElement(product);
+        container.appendChild(productElement);
       });
-    });
+    })
+    .catch(error => console.log('Error fetching products:', error));
+}
 
-    function fetchProducts(collectionHandle, container) {
-      fetch(`/collections/${collectionHandle}/products.json`)
-      .then(response => response.json())
-      .then(data => {
-        const products = data.products;
-        const randomProducts = getRandomProducts(products, 2);
+function getRandomProducts(products, count) {
+  const shuffled = products.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 2);
+}
 
-        randomProducts.forEach(product => {
-          const productElement = createProductElement(product);
-          container.appendChild(productElement);
-        });
-      })
-      .catch(error => console.log('Error fetching products:', error));
-    }
+function createProductElement(product) {
+  const productElement = document.createElement('div');
+  productElement.classList.add('product-item');
 
-    function getRandomProducts(products, count) {
-      const shuffled = products.sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, 2);
-    }
+  productElement.innerHTML = `
+    <p class="mega-menu__product-title">${product.title}</p>
+    <div class="mega-menu__product-card-container">
+      <div class="mega-menu__product-card-info">
+        <p>${product.vendor}</p>
+        <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+      </div>
+      <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
+    </div>
+    <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+  `;
 
-    function createProductElement(product) {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product-item');
+  return productElement;
+}
 
-      productElement.innerHTML = `
+    // dropdownItems.forEach(function(item) {
+    //   item.addEventListener('mouseenter', function() {
+    //     const collectionHandle = item.getAttribute('data-collection-handle');
+    //     const productPreview = item.querySelector('.product-preview');
+    //     console.log('active')
+
+    //     //check if product are already featched
+    //     if (productPreview.innerHTML.trim() === '') {
+    //       fetchProducts(collectionHandle, productPreview);
+    //     }
+    //   });
+    // });
+
+    // function fetchProducts(collectionHandle, container) {
+    //   fetch(`/collections/${collectionHandle}/products.json`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     const products = data.products;
+    //     const randomProducts = getRandomProducts(products, 2);
+
+    //     randomProducts.forEach(product => {
+    //       const productElement = createProductElement(product);
+    //       container.appendChild(productElement);
+    //     });
+    //   })
+    //   .catch(error => console.log('Error fetching products:', error));
+    // }
+
+    // function getRandomProducts(products, count) {
+    //   const shuffled = products.sort(() => 0.5 - Math.random());
+    //   return shuffled.slice(0, 2);
+    // }
+
+    // function createProductElement(product) {
+    //   const productElement = document.createElement('div');
+    //   productElement.classList.add('product-item');
+
+    //   productElement.innerHTML = `
         
-        <p class="mega-menu__product-title">${product.title}</p>
-        <div class="mega-menu__product-card-container">
-          <div class="mega-menu__product-card-info">
-            <p>${product.vendor}</p>
-            <p class="mega-menu__product-price">$${product.variants[0].price}</p>
-          </div>
-          <img src="${product.images[0].src}" alt="${product.title}"  class="mega-menu__product-image"/>
-        </div>
-        <a class="mega-menu__atc-btn">+ ADD TO CART</a>
-      `;
+    //     <p class="mega-menu__product-title">${product.title}</p>
+    //     <div class="mega-menu__product-card-container">
+    //       <div class="mega-menu__product-card-info">
+    //         <p>${product.vendor}</p>
+    //         <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+    //       </div>
+    //       <img src="${product.images[0].src}" alt="${product.title}"  class="mega-menu__product-image"/>
+    //     </div>
+    //     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+    //   `;
 
-      return productElement;
-    }
+    //   return productElement;
+    // }
 
 
   // subChildDropdown.forEach(function(dropdown) {
