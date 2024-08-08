@@ -64,7 +64,7 @@
         {% for link in section.settings.mega_navbar.links %}
           {% assign collection_handle = link.url | remove: '/collections/' %}
           {% assign collection = collections[collection_handle] %}
-          {% assign counter = counter | plus: 1%} 
+          {% assign counter = counter | plus: 1 %} 
           <li class="mega__nav-link {% if link.links != blank %} dropdown {% endif %}">
             <a href="{{ link.url }}">
               {% if collection.image != blank %}
@@ -109,7 +109,7 @@
             {% endif %}
           </li>
           {% if counter == 1 %}
-          <div class="mega-menu__divider"></div>
+            <div class="mega-menu__divider"></div>
           {% endif %}
         {% endfor %}
       </ul>
