@@ -102,7 +102,7 @@
                       </ul>
                     {% endif %}
                   </li>
-                  {%  assign dropdownDividerMobile =  %} 
+                  {%  assign dropdownDividerMobile = dropdownDividerMobile |  plus: 1 %} 
                   <div class="dropdown-divider"></div>
                 {% endfor %}
                 
