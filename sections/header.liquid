@@ -103,7 +103,7 @@
                     {% endif %}
                   </li>
                   {%  assign dropdownDividerMobile = dropdownDividerMobile |  plus: 1 %} 
-                  {% if dropdownDividerMobile == 4 or dropdownDividerMobile == 8 or dropdownDividerMobile == 16 or dropdownDividerMobile == 20 or dropdownDividerMobile == 24 %}
+                  {% if dropdownDividerMobile == 4 or dropdownDividerMobile == 8 or dropdownDividerMobile == 12 or dropdownDividerMobile == 16 or dropdownDividerMobile == 20 or dropdownDividerMobile == 24 %}
                     <div class="dropdown-divider"></div>
                   {% endif %}
                 {% endfor %}
@@ -529,7 +529,6 @@
 
     .dropdown-divider {
       display: inline-block !important;
-      
       width: 100%;
       border: 1px solid #DADADA;
     }
