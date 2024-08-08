@@ -133,6 +133,24 @@
 
 <style>
 
+#product-preview-container {
+  position: absolute; /* or fixed if you want it to stay in place */
+  right: 0;
+  top: 0;
+  width: 300px; /* adjust based on your design */
+  padding: 20px;
+  background-color: #fff; /* or another background */
+  z-index: 100; /* ensure it stays above other elements */
+}
+
+.mega__nav-link.dropdown:hover #product-preview-container {
+  display: block;
+}
+
+.product-item {
+  margin-bottom: 20px;
+}
+
   
   .main__nav-bar {
     /* height: 85px; */
