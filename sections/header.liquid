@@ -82,7 +82,7 @@
                   {% assign child_collection_handle = child.url | remove: '/collections/' %}
                   {% assign child_collection = collections[child_collection_handle] %}
                 <li class="mega-menu__sub-item {% if child.links != blank %} sub-child-dropdown {% endif %}" {% if child_collection %}data-collection-handle="{{ child_collection_handle }}" {% endif %}>
-                    <a href="{{ child.url }}">
+                    <a href="{{ child.url }}" class="poppins-medium">
                       {% if child_collection.image != blank %}
                         <img src="{{ child_collection.image | img_url: 'medium'}}" class="collection-brand__featured-image">
                       {% endif %}
