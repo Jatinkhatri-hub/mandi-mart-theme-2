@@ -59,6 +59,7 @@
               type="submit">{% render 'icon-search' %}</button>
           </form>
         </div>
+        {%  assign counter = 0 %}
         {% for link in section.settings.mega_navbar.links %}
           {% assign collection_handle = link.url | remove: '/collections/' %}
           {% assign collection = collections[collection_handle] %}
