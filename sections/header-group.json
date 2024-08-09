@@ -34,7 +34,7 @@
         "announcement_3fWHWK"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-94685966-0b85-4916-b13e-a36304def467",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -48,9 +48,9 @@
       "settings": {
         "brand_logo": "shopify:\/\/shop_images\/image_15_1.png",
         "logo_width": 100,
-        "navigation": "main-menu",
-        "mega_navbar": "",
-        "color_scheme": "scheme-1",
+        "navigation": "main-menu-1",
+        "mega_navbar": "mega-menu-new",
+        "color_scheme": "scheme-3a1e833d-a4a3-48e9-bebb-e877950e7747",
         "menu_color_scheme": "scheme-1"
       }
     }
