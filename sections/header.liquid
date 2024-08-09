@@ -789,9 +789,9 @@ function fetchProducts(collectionHandle, container) {
   fetch(`/collections/${collectionHandle}/products.json`)
     .then(response => response.json())
     .then(data => {
-      const products = data.products.slice(0, 2); // Limit to 2 products
+      const randomProducts = getRandomProducts(data.products, 2); // Get 2 random products
       container.innerHTML = ''; // Clear previous content
-      products.forEach(product => {
+      randomProducts.forEach(product => {
         const productElement = createProductElement(product);
         container.appendChild(productElement);
       });
