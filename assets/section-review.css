@@ -96,6 +96,10 @@
     justify-content: center;
   }
 
+  .review__user-name {
+    font-size: ;
+  }
+
   .review__section-header p {
     text-align: center;
     font-size: 3.5rem;
