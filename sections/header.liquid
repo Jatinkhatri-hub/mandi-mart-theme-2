@@ -738,63 +738,124 @@
 
 //   return productElement;
 // }
-    const productPreviewContainer = document.getElementById('product-preview-container');
-    const firstCollectionHandle = dropdownItems[4].getAttribute('data-collection-handle');
-    fetchProducts(firstCollectionHandle, productPreviewContainer);
+const productPreviewContainer = document.getElementById('product-preview-container');
 
-    dropdownItems.forEach(function(item) {
-      item.addEventListener('mouseenter', function() {
-        const collectionHandle = item.getAttribute('data-collection-handle');
-     //   const productPreview = item.querySelector('.product-preview');
-        console.log('active')
-        
-        fetchProducts(collectionHandle, productPreviewContainer);
-        //check if product are already featched
-        // if (productPreview.innerHTML.trim() === '') {
-        //   fetchProducts(collectionHandle, productPreview);
-        // }
+// Find the first dropdown item specific to your desired dropdown
+const firstDropdownItem = document.querySelector('.mega-menu__sub-item');
+const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
+
+// Fetch and display products for the first collection
+fetchProducts(firstCollectionHandle, productPreviewContainer);
+
+dropdownItems.forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    const collectionHandle = item.getAttribute('data-collection-handle');
+    
+    // Fetch and display products for the hovered collection
+    fetchProducts(collectionHandle, productPreviewContainer);
+  });
+});
+
+function fetchProducts(collectionHandle, container) {
+  // Clear the container before fetching new products
+  container.innerHTML = '';
+
+  fetch(`/collections/${collectionHandle}/products.json`)
+    .then(response => response.json())
+    .then(data => {
+      const products = data.products;
+      const randomProducts = getRandomProducts(products, 2);
+
+      randomProducts.forEach(product => {
+        const productElement = createProductElement(product);
+        container.appendChild(productElement);
       });
-    });
+    })
+    .catch(error => console.log('Error fetching products:', error));
+}
 
-    function fetchProducts(collectionHandle, container) {
-      fetch(`/collections/${collectionHandle}/products.json`)
-      .then(response => response.json())
-      .then(data => {
-        const products = data.products;
-        const randomProducts = getRandomProducts(products, 2);
+function getRandomProducts(products, count) {
+  const shuffled = products.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 2);
+}
 
-        randomProducts.forEach(product => {
-          const productElement = createProductElement(product);
-          container.appendChild(productElement);
-        });
-      })
-      .catch(error => console.log('Error fetching products:', error));
-    }
+function createProductElement(product) {
+  const productElement = document.createElement('div');
+  productElement.classList.add('product-item');
 
-    function getRandomProducts(products, count) {
-      const shuffled = products.sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, 2);
-    }
+  productElement.innerHTML = `
+    <p class="mega-menu__product-title">${product.title}</p>
+    <div class="mega-menu__product-card-container">
+      <div class="mega-menu__product-card-info">
+        <p>${product.vendor}</p>
+        <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+      </div>
+      <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
+    </div>
+    <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+  `;
 
-    function createProductElement(product) {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product-item');
+  return productElement;
+}
 
-      productElement.innerHTML = `
+
+    // const productPreviewContainer = document.getElementById('product-preview-container');
+    // const firstCollectionHandle = dropdownItems[4].getAttribute('data-collection-handle');
+    // fetchProducts(firstCollectionHandle, productPreviewContainer);
+
+    // dropdownItems.forEach(function(item) {
+    //   item.addEventListener('mouseenter', function() {
+    //     const collectionHandle = item.getAttribute('data-collection-handle');
+    //  //   const productPreview = item.querySelector('.product-preview');
+    //     console.log('active')
         
-        <p class="mega-menu__product-title">${product.title}</p>
-        <div class="mega-menu__product-card-container">
-          <div class="mega-menu__product-card-info">
-            <p>${product.vendor}</p>
-            <p class="mega-menu__product-price">$${product.variants[0].price}</p>
-          </div>
-          <img src="${product.images[0].src}" alt="${product.title}"  class="mega-menu__product-image"/>
-        </div>
-        <a class="mega-menu__atc-btn">+ ADD TO CART</a>
-      `;
+    //     fetchProducts(collectionHandle, productPreviewContainer);
+    //     //check if product are already featched
+    //     // if (productPreview.innerHTML.trim() === '') {
+    //     //   fetchProducts(collectionHandle, productPreview);
+    //     // }
+    //   });
+    // });
 
-      return productElement;
-    }
+    // function fetchProducts(collectionHandle, container) {
+    //   fetch(`/collections/${collectionHandle}/products.json`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     const products = data.products;
+    //     const randomProducts = getRandomProducts(products, 2);
+
+    //     randomProducts.forEach(product => {
+    //       const productElement = createProductElement(product);
+    //       container.appendChild(productElement);
+    //     });
+    //   })
+    //   .catch(error => console.log('Error fetching products:', error));
+    // }
+
+    // function getRandomProducts(products, count) {
+    //   const shuffled = products.sort(() => 0.5 - Math.random());
+    //   return shuffled.slice(0, 2);
+    // }
+
+    // function createProductElement(product) {
+    //   const productElement = document.createElement('div');
+    //   productElement.classList.add('product-item');
+
+    //   productElement.innerHTML = `
+        
+    //     <p class="mega-menu__product-title">${product.title}</p>
+    //     <div class="mega-menu__product-card-container">
+    //       <div class="mega-menu__product-card-info">
+    //         <p>${product.vendor}</p>
+    //         <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+    //       </div>
+    //       <img src="${product.images[0].src}" alt="${product.title}"  class="mega-menu__product-image"/>
+    //     </div>
+    //     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+    //   `;
+
+    //   return productElement;
+    // }
 
 
   // subChildDropdown.forEach(function(dropdown) {
