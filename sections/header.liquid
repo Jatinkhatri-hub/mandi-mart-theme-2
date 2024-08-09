@@ -781,39 +781,17 @@
 
 //   return productElement;
 // }
+// Select all dropdown items in the mega menu
+const dropdownItems = document.querySelectorAll('.mega-menu__sub-item');
 
-
-/// CURRENT 
-
-const productPreviewContainer = document.getElementById('product-preview-container');
-
-// Find the first dropdown item specific to your desired dropdown
-const firstDropdownItem = document.querySelector('.mega-menu__sub-item');
-const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
-
-// Fetch and display products for the first collection
-fetchProducts(firstCollectionHandle, productPreviewContainer);
-
-dropdownItems.forEach(function(item) {
-  item.addEventListener('mouseenter', function() {
-    const collectionHandle = item.getAttribute('data-collection-handle');
-    
-    // Fetch and display products for the hovered collection
-    fetchProducts(collectionHandle, productPreviewContainer);
-  });
-});
-
+// Function to fetch products and update the preview container
 function fetchProducts(collectionHandle, container) {
-  // Clear the container before fetching new products
-  container.innerHTML = '';
-
   fetch(`/collections/${collectionHandle}/products.json`)
     .then(response => response.json())
     .then(data => {
-      const products = data.products;
-      const randomProducts = getRandomProducts(products, 2);
-
-      randomProducts.forEach(product => {
+      const products = data.products.slice(0, 2); // Limit to 2 products
+      container.innerHTML = ''; // Clear previous content
+      products.forEach(product => {
         const productElement = createProductElement(product);
         container.appendChild(productElement);
       });
@@ -821,31 +799,104 @@ function fetchProducts(collectionHandle, container) {
     .catch(error => console.log('Error fetching products:', error));
 }
 
-function getRandomProducts(products, count) {
-  const shuffled = products.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
-
+// Function to create the product element
 function createProductElement(product) {
   const productElement = document.createElement('div');
   productElement.classList.add('product-item');
-
   productElement.innerHTML = `
-    <p class="mega-menu__product-title poppins-semibold">${product.title}</p>
+    <p class="mega-menu__product-title">${product.title}</p>
     <div class="mega-menu__product-card-container">
       <div class="mega-menu__product-card-info">
         <p>${product.vendor}</p>
         <p class="mega-menu__product-price">$${product.variants[0].price}</p>
       </div>
-      <div class="mega-menu__product-img-wrapper">
       <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
-      </div>
     </div>
     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
   `;
-
   return productElement;
 }
+
+// Initial load: Display products from the first collection in the first dropdown
+const firstDropdownItem = dropdownItems[0];
+if (firstDropdownItem) {
+  const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
+  const productPreviewContainer = document.getElementById('product-preview-container');
+  fetchProducts(firstCollectionHandle, productPreviewContainer);
+}
+
+// Update the preview container on hover
+dropdownItems.forEach(function(item) {
+  item.addEventListener('mouseenter', function() {
+    const collectionHandle = item.getAttribute('data-collection-handle');
+    const productPreviewContainer = document.getElementById('product-preview-container');
+    fetchProducts(collectionHandle, productPreviewContainer);
+  });
+});
+
+/// CURRENT 
+
+// const productPreviewContainer = document.getElementById('product-preview-container');
+
+// // Find the first dropdown item specific to your desired dropdown
+// const firstDropdownItem = document.querySelector('.mega-menu__sub-item');
+// const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
+
+// // Fetch and display products for the first collection
+// fetchProducts(firstCollectionHandle, productPreviewContainer);
+
+// dropdownItems.forEach(function(item) {
+//   item.addEventListener('mouseenter', function() {
+//     const collectionHandle = item.getAttribute('data-collection-handle');
+    
+//     // Fetch and display products for the hovered collection
+//     fetchProducts(collectionHandle, productPreviewContainer);
+//   });
+// });
+
+// function fetchProducts(collectionHandle, container) {
+//   // Clear the container before fetching new products
+//   container.innerHTML = '';
+
+//   fetch(`/collections/${collectionHandle}/products.json`)
+//     .then(response => response.json())
+//     .then(data => {
+//       const products = data.products;
+//       const randomProducts = getRandomProducts(products, 2);
+
+//       randomProducts.forEach(product => {
+//         const productElement = createProductElement(product);
+//         container.appendChild(productElement);
+//       });
+//     })
+//     .catch(error => console.log('Error fetching products:', error));
+// }
+
+// function getRandomProducts(products, count) {
+//   const shuffled = products.sort(() => 0.5 - Math.random());
+//   return shuffled.slice(0, count);
+// }
+
+// function createProductElement(product) {
+//   const productElement = document.createElement('div');
+//   productElement.classList.add('product-item');
+
+//   productElement.innerHTML = `
+//     <p class="mega-menu__product-title poppins-semibold">${product.title}</p>
+//     <div class="mega-menu__product-card-container">
+//       <div class="mega-menu__product-card-info">
+//         <p>${product.vendor}</p>
+//         <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+//       </div>
+//       <div class="mega-menu__product-img-wrapper">
+//       <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
+//       </div>
+//     </div>
+//     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+//   `;
+
+//   return productElement;
+// }
 
 
     // const productPreviewContainer = document.getElementById('product-preview-container');
