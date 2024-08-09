@@ -42,6 +42,7 @@
         .coll-section-container{
             width: 100%;
             margin: 10px;
+            align-items: center;
         }
         .coll-section-ratings{
             height: 24px;
