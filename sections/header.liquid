@@ -857,7 +857,15 @@ function addToCart(variantId) {
       // You can add a notification or update the cart UI here
     })
     .catch(error => console.log('Error adding product to cart:', error));
-    
+    // .finally(() => {
+    //   // Change button text to "Added"
+    //   addToCartButton.textContent = 'Added';
+
+    //   // Revert button text back to original after 2 seconds
+    //   setTimeout(() => {
+    //     addToCartButton.textContent = '+ ADD TO CART';
+    //   }, 2000);
+    // });
 }
 
 // Initial load: Display products from the first collection in the first dropdown
