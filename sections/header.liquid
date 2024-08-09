@@ -776,7 +776,7 @@ function fetchProducts(collectionHandle, container) {
 
 function getRandomProducts(products, count) {
   const shuffled = products.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, 2);
+  return shuffled.slice(0, count);
 }
 
 function createProductElement(product) {
