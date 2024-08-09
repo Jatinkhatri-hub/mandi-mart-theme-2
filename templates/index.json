@@ -47,9 +47,71 @@
       ],
       "settings": {
       }
+    },
+    "featured_collection_banner_m9LknT": {
+      "type": "featured-collection-banner",
+      "blocks": {
+        "collection_card_99WAtn": {
+          "type": "collection_card",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Ellipse_218.png",
+            "title": "<p>Best Seller<\/p>",
+            "collection": "best-sellers"
+          }
+        },
+        "collection_card_w6dmiR": {
+          "type": "collection_card",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Group_1000007089.png",
+            "title": "<p>Clearance<\/p>",
+            "collection": "clearance"
+          }
+        },
+        "collection_card_ynYLjT": {
+          "type": "collection_card",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Ellipse_219.png",
+            "title": "<p>New Products<\/p>",
+            "collection": "new-products"
+          }
+        },
+        "collection_card_QRgzJB": {
+          "type": "collection_card",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Group_1000007091_1.png",
+            "title": "<p>All Brands<\/p>",
+            "collection": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_99WAtn",
+        "collection_card_w6dmiR",
+        "collection_card_ynYLjT",
+        "collection_card_QRgzJB"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "feature_collection_new_b7ni6r": {
+      "type": "feature-collection-new",
+      "settings": {
+        "heading": "<p>Feature Collection<\/p>",
+        "collection": "new-beginnings",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "hero_carousel_GGF9rU"
+    "hero_carousel_GGF9rU",
+    "featured_collection_banner_m9LknT",
+    "feature_collection_new_b7ni6r"
   ]
 }
