@@ -736,6 +736,7 @@
 // }
     const productPreviewContainer = document.getElementById('product-preview-container');
     const firstCollectionHandle = dropdownItems[0].getAttribute('data-collection-handle');
+    fetchProducts(firstCollectionHandle, productPreviewContainer);
 
     dropdownItems.forEach(function(item) {
       item.addEventListener('mouseenter', function() {
