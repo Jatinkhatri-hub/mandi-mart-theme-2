@@ -790,20 +790,6 @@
 // Select all dropdown items in the mega menu
 //const dropdownItems = document.querySelectorAll('.mega-menu__sub-item');
 
-const dropdowns = document.querySelectorAll('.dropdown');
-
-    if (dropdowns.length > 1) { // Ensure there are at least two dropdowns
-      const secondDropdown = dropdowns[1]; // Select the second dropdown
-
-      const dropdownItemsInSecondDropdown = secondDropdown.querySelectorAll('.mega-menu__sub-item');
-      if (dropdownItemsInSecondDropdown.length > 0) {
-        const firstItemInSecondDropdown = dropdownItemsInSecondDropdown[0]; // Get the first item in the second dropdown
-        const collectionHandle = firstItemInSecondDropdown.getAttribute('data-collection-handle');
-        const productPreviewContainer = document.getElementById('product-preview-container');
-        fetchProducts(collectionHandle, productPreviewContainer);
-      }
-    }
-
 // Function to fetch products and update the preview container
 function fetchProducts(collectionHandle, container) {
   fetch(`/collections/${collectionHandle}/products.json`)
@@ -883,13 +869,12 @@ function addToCart(variantId) {
 }
 
 // Initial load: Display products from the first collection in the first dropdown
-
-// const firstDropdownItem = dropdownItems[2];
-// if (firstDropdownItem) {
-//   const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
-//   const productPreviewContainer = document.getElementById('product-preview-container');
-//   fetchProducts(firstCollectionHandle, productPreviewContainer);
-// }
+const firstDropdownItem = dropdownItems[0];
+if (firstDropdownItem) {
+  const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
+  const productPreviewContainer = document.getElementById('product-preview-container');
+  fetchProducts(firstCollectionHandle, productPreviewContainer);
+}
 
 // Update the preview container on hover
 dropdownItems.forEach(function(item) {
