@@ -195,6 +195,20 @@
             "user_name": "Name",
             "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
           }
+        },
+        "review_carousle_NFJcEr": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_wQARnx": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
         }
       },
       "block_order": [
@@ -202,10 +216,12 @@
         "review_carousle_z7Lapb",
         "review_carousle_jUECxj",
         "review_carousle_Y7EQgL",
-        "review_carousle_FMQA6T"
+        "review_carousle_FMQA6T",
+        "review_carousle_NFJcEr",
+        "review_carousle_wQARnx"
       ],
       "settings": {
-        "heading": "<p>Rich text<\/p>",
+        "heading": "<p>TrustPiolt Reviews<\/p>",
         "section_color_scheme": "",
         "color_scheme": "",
         "padding_top": 36,
