@@ -92,7 +92,7 @@
       ],
       "settings": {
         "section_color_scheme": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -103,6 +103,110 @@
         "heading": "<p>Feature Collection<\/p>",
         "collection": "new-beginnings",
         "section_color_scheme": "",
+        "color_scheme": "scheme-6e08c943-bb7e-4295-8fa7-43030ec10df4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "brand_collection_list_two_M9gRyj": {
+      "type": "brand-collection-list-two",
+      "blocks": {
+        "brand_card_XE9HDY": {
+          "type": "brand_card",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/image_29_526de05c-7747-455b-b7bd-f3f3996230c7.png",
+            "title": "<p>Aspire Nutrition<\/p>",
+            "collection": ""
+          }
+        },
+        "brand_card_RAq4By": {
+          "type": "brand_card",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/image_30.png",
+            "title": "<p>Spectrum Awakening<\/p>",
+            "collection": "spectrum-awakening"
+          }
+        },
+        "brand_card_QKaqkq": {
+          "type": "brand_card",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Rectangle_41.png",
+            "title": "<p>ANRC<\/p>",
+            "collection": "anrc-protocol"
+          }
+        },
+        "brand_card_nL3aRw": {
+          "type": "brand_card",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Rectangle_42.png",
+            "title": "<p>BIOM<\/p>",
+            "collection": "biom"
+          }
+        }
+      },
+      "block_order": [
+        "brand_card_XE9HDY",
+        "brand_card_RAq4By",
+        "brand_card_QKaqkq",
+        "brand_card_nL3aRw"
+      ],
+      "settings": {
+        "section_heading": "Brand",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-6e08c943-bb7e-4295-8fa7-43030ec10df4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_review_FUk7Pd": {
+      "type": "section-review",
+      "blocks": {
+        "review_carousle_FYVxnK": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_z7Lapb": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_jUECxj": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_Y7EQgL": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        },
+        "review_carousle_FMQA6T": {
+          "type": "review_carousle",
+          "settings": {
+            "user_name": "Name",
+            "user_description": "Lorem ipsum dolor sit amet consectetur. Mattis risus neque sed pulvinar in amet sed. Nibh et congue cursus malesuada morbi nunc. Donec mus vitae aliquam scelerisque"
+          }
+        }
+      },
+      "block_order": [
+        "review_carousle_FYVxnK",
+        "review_carousle_z7Lapb",
+        "review_carousle_jUECxj",
+        "review_carousle_Y7EQgL",
+        "review_carousle_FMQA6T"
+      ],
+      "settings": {
+        "heading": "<p>Rich text<\/p>",
+        "section_color_scheme": "",
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -112,6 +216,8 @@
   "order": [
     "hero_carousel_GGF9rU",
     "featured_collection_banner_m9LknT",
-    "feature_collection_new_b7ni6r"
+    "feature_collection_new_b7ni6r",
+    "brand_collection_list_two_M9gRyj",
+    "section_review_FUk7Pd"
   ]
 }
