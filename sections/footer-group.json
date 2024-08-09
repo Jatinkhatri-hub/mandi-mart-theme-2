@@ -31,7 +31,7 @@
         "link_list_68Kmyi": {
           "type": "link_list",
           "settings": {
-            "heading": "News",
+            "heading": "<strong>News<\/strong>",
             "menu": "footer"
           }
         },
@@ -39,7 +39,7 @@
           "type": "link_list",
           "settings": {
             "heading": "<strong>Information<\/strong>",
-            "menu": "footer"
+            "menu": "information"
           }
         },
         "container_KgCdX7": {
