@@ -136,13 +136,12 @@
   }
 
   .container__product-image{
-    height: 160px;
+    height: 125px;
   
   }
   
   .product-image {
-    height: 160px;
-    
+    height: 125px;
   }
 
   .container__product-info {
