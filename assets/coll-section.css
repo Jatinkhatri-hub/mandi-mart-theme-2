@@ -44,6 +44,11 @@
             margin: 10px;
             align-items: center;
         }
+
+        .coll-section-text{
+            
+        }
+
         .coll-section-ratings{
             height: 24px;
             width: 322px;
