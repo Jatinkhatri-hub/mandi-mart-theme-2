@@ -134,7 +134,14 @@
 <style>
 
 
-  #
+  #product-preview-container {
+    background: black;
+    width: 242px;
+    height: 516px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+  }
   
 
   
@@ -731,7 +738,7 @@
     dropdownItems.forEach(function(item) {
       item.addEventListener('mouseenter', function() {
         const collectionHandle = item.getAttribute('data-collection-handle');
-        const productPreview = item.querySelector('.product-preview');
+     //   const productPreview = item.querySelector('.product-preview');
         console.log('active')
 
         //check if product are already featched
