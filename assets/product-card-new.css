@@ -145,7 +145,7 @@
   }
 
   .container__product-info {
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 1rem;
   }
 
