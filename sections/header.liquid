@@ -143,6 +143,9 @@
     top: -20px;
   }
   
+  .mega__nav-link.dropdown:hover #product-preview-container {
+    display: block;
+  }
 
   
   .main__nav-bar {
@@ -744,7 +747,7 @@
      //   const productPreview = item.querySelector('.product-preview');
         console.log('active')
         
-        fetchProducts(collectionHandle)
+        fetchProducts(collectionHandle, productPreviewContainer);
         //check if product are already featched
         // if (productPreview.innerHTML.trim() === '') {
         //   fetchProducts(collectionHandle, productPreview);
