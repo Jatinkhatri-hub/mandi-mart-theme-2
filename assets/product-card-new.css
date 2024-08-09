@@ -145,6 +145,10 @@
     height: 125px;
   }
 
+  .container__feature-collection--title p { 
+    font-size: 24px;
+  }
+
   .container__product-info {
     justify-content: space-between;
     padding-bottom: 1rem;
