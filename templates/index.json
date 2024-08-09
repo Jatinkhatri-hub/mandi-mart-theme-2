@@ -227,6 +227,53 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_zgXtbY": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iGHyhB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet cons ectetur acus sit amet",
+            "heading_size": "h2"
+          }
+        },
+        "text_RcU89t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Lacus duis justo fames gravida et rhoncus ut. Sit cras!<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_aFRtpk": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iGHyhB",
+        "text_RcU89t",
+        "button_aFRtpk"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Yams_-_2024-05-21T174334_1.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-94685966-0b85-4916-b13e-a36304def467",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -234,6 +281,7 @@
     "featured_collection_banner_m9LknT",
     "feature_collection_new_b7ni6r",
     "brand_collection_list_two_M9gRyj",
-    "section_review_FUk7Pd"
+    "section_review_FUk7Pd",
+    "image_with_text_zgXtbY"
   ]
 }
