@@ -781,67 +781,67 @@
 
 //   return productElement;
 // }
-const productPreviewContainer = document.getElementById('product-preview-container');
+// const productPreviewContainer = document.getElementById('product-preview-container');
 
-// Find the first dropdown item specific to your desired dropdown
-const firstDropdownItem = document.querySelector('.mega-menu__sub-item');
-const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
+// // Find the first dropdown item specific to your desired dropdown
+// const firstDropdownItem = document.querySelector('.mega-menu__sub-item');
+// const firstCollectionHandle = firstDropdownItem.getAttribute('data-collection-handle');
 
-// Fetch and display products for the first collection
-fetchProducts(firstCollectionHandle, productPreviewContainer);
+// // Fetch and display products for the first collection
+// fetchProducts(firstCollectionHandle, productPreviewContainer);
 
-dropdownItems.forEach(function(item) {
-  item.addEventListener('mouseenter', function() {
-    const collectionHandle = item.getAttribute('data-collection-handle');
+// dropdownItems.forEach(function(item) {
+//   item.addEventListener('mouseenter', function() {
+//     const collectionHandle = item.getAttribute('data-collection-handle');
     
-    // Fetch and display products for the hovered collection
-    fetchProducts(collectionHandle, productPreviewContainer);
-  });
-});
+//     // Fetch and display products for the hovered collection
+//     fetchProducts(collectionHandle, productPreviewContainer);
+//   });
+// });
 
-function fetchProducts(collectionHandle, container) {
-  // Clear the container before fetching new products
-  container.innerHTML = '';
+// function fetchProducts(collectionHandle, container) {
+//   // Clear the container before fetching new products
+//   container.innerHTML = '';
 
-  fetch(`/collections/${collectionHandle}/products.json`)
-    .then(response => response.json())
-    .then(data => {
-      const products = data.products;
-      const randomProducts = getRandomProducts(products, 2);
+//   fetch(`/collections/${collectionHandle}/products.json`)
+//     .then(response => response.json())
+//     .then(data => {
+//       const products = data.products;
+//       const randomProducts = getRandomProducts(products, 2);
 
-      randomProducts.forEach(product => {
-        const productElement = createProductElement(product);
-        container.appendChild(productElement);
-      });
-    })
-    .catch(error => console.log('Error fetching products:', error));
-}
+//       randomProducts.forEach(product => {
+//         const productElement = createProductElement(product);
+//         container.appendChild(productElement);
+//       });
+//     })
+//     .catch(error => console.log('Error fetching products:', error));
+// }
 
-function getRandomProducts(products, count) {
-  const shuffled = products.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
+// function getRandomProducts(products, count) {
+//   const shuffled = products.sort(() => 0.5 - Math.random());
+//   return shuffled.slice(0, count);
+// }
 
-function createProductElement(product) {
-  const productElement = document.createElement('div');
-  productElement.classList.add('product-item');
+// function createProductElement(product) {
+//   const productElement = document.createElement('div');
+//   productElement.classList.add('product-item');
 
-  productElement.innerHTML = `
-    <p class="mega-menu__product-title poppins-semibold">${product.title}</p>
-    <div class="mega-menu__product-card-container">
-      <div class="mega-menu__product-card-info">
-        <p>${product.vendor}</p>
-        <p class="mega-menu__product-price">$${product.variants[0].price}</p>
-      </div>
-      <div class="mega-menu__product-img-wrapper">
-      <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
-      </div>
-    </div>
-    <a class="mega-menu__atc-btn">+ ADD TO CART</a>
-  `;
+//   productElement.innerHTML = `
+//     <p class="mega-menu__product-title poppins-semibold">${product.title}</p>
+//     <div class="mega-menu__product-card-container">
+//       <div class="mega-menu__product-card-info">
+//         <p>${product.vendor}</p>
+//         <p class="mega-menu__product-price">$${product.variants[0].price}</p>
+//       </div>
+//       <div class="mega-menu__product-img-wrapper">
+//       <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
+//       </div>
+//     </div>
+//     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
+//   `;
 
-  return productElement;
-}
+//   return productElement;
+// }
 
 
     // const productPreviewContainer = document.getElementById('product-preview-container');
