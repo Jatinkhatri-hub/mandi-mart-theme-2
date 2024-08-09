@@ -829,8 +829,28 @@ function createProductElement(product) {
     addToCart(variantId);
   });
 
-  
+
   return productElement;
+}
+
+function addToCart(variantId) {
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+    body: JSON.stringify({
+      id: variantId,
+      quantity: 1,
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Product added to cart:', data);
+      // You can add a notification or update the cart UI here
+    })
+    .catch(error => console.log('Error adding product to cart:', error));
 }
 
 // Initial load: Display products from the first collection in the first dropdown
