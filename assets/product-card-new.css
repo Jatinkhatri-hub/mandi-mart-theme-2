@@ -135,6 +135,16 @@
     gap: 0;
   }
 
+  .container__product-image{
+    height: 160px;
+  
+  }
+  
+  .product-image {
+    height: 160px;
+    
+  }
+
   .container__product-info {
     justify-content: space-around;
     padding-bottom: 1rem;
