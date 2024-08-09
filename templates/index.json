@@ -285,6 +285,50 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "brand_collection_rWGhK6": {
+      "type": "brand-collection",
+      "blocks": {
+        "brand_collection_F6LWFb": {
+          "type": "brand_collection",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/Untitleddesign_97.png",
+            "collection": "neurobiologix",
+            "title": "Neurobiologix",
+            "button_text": "Explore Brand"
+          }
+        },
+        "brand_collection_XG3t37": {
+          "type": "brand_collection",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/image_9_1.png",
+            "collection": "metabolics",
+            "title": "Metabolics",
+            "button_text": "Explore Brand"
+          }
+        },
+        "brand_collection_hEAhEJ": {
+          "type": "brand_collection",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/image_9_2.png",
+            "collection": "custom-probiotics",
+            "title": "Probiotics",
+            "button_text": "Explore Brand"
+          }
+        }
+      },
+      "block_order": [
+        "brand_collection_F6LWFb",
+        "brand_collection_XG3t37",
+        "brand_collection_hEAhEJ"
+      ],
+      "settings": {
+        "heading": "<p>Explore Our Top Brands<\/p>",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -294,6 +338,7 @@
     "brand_collection_list_two_M9gRyj",
     "section_review_FUk7Pd",
     "image_with_text_zgXtbY",
-    "feature_collection_new_pzdKzW"
+    "feature_collection_new_pzdKzW",
+    "brand_collection_rWGhK6"
   ]
 }
