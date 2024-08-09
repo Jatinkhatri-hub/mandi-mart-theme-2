@@ -822,6 +822,14 @@ function createProductElement(product) {
       </div>
     <a class="mega-menu__atc-btn" data-variant-id="${product.variants[0].id}">+ ADD TO CART</a>
   `;
+
+  const addToCartButton = productElement.querySelector('.mega-menu__atc-btn');
+  addToCartButton.addEventListener('click', function() {
+    const variantId = this.getAttribute('data-variant-id');
+    addToCart(variantId);
+  });
+
+  
   return productElement;
 }
 
