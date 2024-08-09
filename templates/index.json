@@ -333,6 +333,7 @@
     },
     "explore_H3kTFK": {
       "type": "explore",
+      "disabled": true,
       "settings": {
         "section_color_scheme": "",
         "color_scheme": "",
