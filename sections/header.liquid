@@ -799,6 +799,12 @@ function fetchProducts(collectionHandle, container) {
     .catch(error => console.log('Error fetching products:', error));
 }
 
+function getRandomProducts(products, count) {
+  const shuffled = [...products].sort(() => 0.5 - Math.random()); // Shuffle array
+  return shuffled.slice(0, count); // Return the specified number of products
+}
+
+
 // Function to create the product element
 function createProductElement(product) {
   const productElement = document.createElement('div');
@@ -812,7 +818,7 @@ function createProductElement(product) {
       </div>
       <div class="mega-menu__product-img-wrapper">
       <img src="${product.images[0].src}" alt="${product.title}" class="mega-menu__product-image"/>
-    
+      </div>
       </div>
     <a class="mega-menu__atc-btn">+ ADD TO CART</a>
   `;
