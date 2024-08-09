@@ -89,7 +89,7 @@
 @media screen and (max-width: 789px){
 
   .review__section-header p {
-    font-size: 35px;
+    font-size: 35px !important;
   }
 
   .review__container {
